@@ -1,0 +1,25 @@
+<!--businessLogin.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="item-view">
+    <view class="input-title">
+      <view class="weui-label">密码</view>
+    </view>
+    <view class="input-view">
+      <input class="weui-input" bindinput="pwdinput" bindfocus="tipsOut" placeholder="请输入密码" password="true" name="password"/>
+    </view> 
+  </view>
+  <view class="bottom-button" formType="submit">
+            <button bindtap="login" class="submit-button" formType="submit">确认</button>
+  </view>
+  <toast duration="2000" hidden="{{toastHidden}}" bindchange="toastBindChange">{{message}}</toast> 
+</view>
+
+
+

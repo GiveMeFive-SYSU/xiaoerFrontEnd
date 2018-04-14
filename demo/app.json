@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/businessRegister/businessRegister",
+    "pages/pay/pay",
+    "pages/menuManager/menuManager",
+    "pages/updatecard/updatecard",
+    "pages/payManager/payManager",
+    "pages/tableManager/tableManager",
+    "pages/tableDetail/tableDetail",
+    "pages/menuDetail/menuDetail",
+    "pages/businessMainPage/businessMainPage",
+    "pages/businessLogin/businessLogin",
+    "pages/updateDish/updateDish",
+    "pages/addDish/addDish",
+    "pages/customerMainPage/customerMainPage",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF9E01",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  }
+}

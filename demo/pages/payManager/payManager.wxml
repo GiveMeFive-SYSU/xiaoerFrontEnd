@@ -1,0 +1,27 @@
+<!--pages/payManager/payManager.wxml-->
+<view class="month">
+  <view class="title">月数据 : {{month}}</view>
+  <view>月营业额：{{monthmoney}}</view>
+  <view>月点单数：{{monthnumber}}</view>
+</view>
+<view class="year">
+  <view class="title">年数据 : {{year}}</view>
+  <view>年营业额：{{yearmoney}}</view>
+  <view>年点单数：{{yearnumber}}</view>
+</view>
+<view class="select">
+  <view class="title">自定义时间</view>
+  <picker mode="date" value="{{startdateValue}}" start="1970-01-01" end="2999-12-12" bindchange="startdatePickerBindchange">
+	起始日期选择: {{startdate}}
+  </picker>
+  <picker mode="date" value="{{enddateValue}}" start="1970-01-01" end="{{Nowtime}}" bindchange="enddatePickerBindchange">
+	结束日期选择: {{enddate}}
+  </picker>
+  <button class="query" bindtap="query">查询</button>
+  <view>总营业额：{{allmoney}}</view>
+  <view>总点单数：{{allnumber}}</view>
+
+</view>
+<toast duration="2000" hidden="{{toastHidden}}" bindchange="toastBindChange">{{message}}</toast> 
+
+

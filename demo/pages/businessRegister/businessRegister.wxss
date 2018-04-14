@@ -1,0 +1,79 @@
+/* businessRegister.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.all{
+  height: 100%;
+  width: 100%;
+  background: #EFEFEF;
+}
+.icon-view{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid #FF9E01;
+  position: absolute;
+  top: 30px;
+  left: 275rpx;
+  background: white;
+}
+.icon{
+  width: 100%;
+  height: 100%;
+}
+
+.regis-form{
+  position: absolute;
+  top:170px;
+  left: 5%;
+  width: 90%;
+}
+.item-view{
+  margin-top: 6px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: row;
+}
+.input-title{
+  width:30%;
+}
+
+.input-view{
+  padding: 2px;
+  background: white;
+  border-radius: 8px;
+  width: 66%;
+}
+.input-view-phone{
+  padding: 2px;
+  border-radius: 8px;
+  width: 38%;
+  background: white;
+  margin-right: 2%;
+}
+
+.bottom-button{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.submit-button{
+  width: 100%;
+  background: #FF9E01;
+  color:white;
+}
+
+.weui-input{
+  font-family: Microsoft YaHei;
+}
+
+.yanzhengma{
+  color: #FF9E01;
+}
+
+.warn{
+  color: red;
+}
+

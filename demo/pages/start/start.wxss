@@ -1,0 +1,38 @@
+page{
+  background: #EFEFEF;
+  height: 100%;
+  width: 100%;
+}
+.busi-start{
+  bottom: 55%;
+  background: white;
+  width:240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  border: 1px solid #FF9E01;
+  position: absolute;
+  left: 275rpx;
+}
+.cust-start{
+  top:55%;
+  background: white;
+  position: absolute;
+  left: 275rpx;
+  width:240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  border: 1px solid #FF9E01;
+}
+
+.img{
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 10%;
+}
+
+.txt{
+  position: absolute;
+  bottom: 20rpx;
+  left: 46rpx;
+}

@@ -1,0 +1,26 @@
+<view class="main">
+    <view class="header">
+        <image src="{{userInfo.avatarUrl}}" class="thumb"></image>
+        <text class="nickname">{{userInfo.nickName}}</text>
+        <text class="about">{{name}}</text>
+    </view>
+    <view class="record">
+    <text space="emsp">今日数据  </text>
+    <text>营业额:{{money}}</text>
+    <text space="emsp">   点单数:{{cases}}</text>
+    </view>
+    <view class="directory">
+        <view class="direc-entry">
+            <navigator url="{{paysetting}}">收支表</navigator>
+        </view>
+        <view class="direc-entry">
+            <navigator url="{{tablesetting}}">桌位管理</navigator>
+        </view>
+        <view class="direc-entry">
+            <navigator url="{{menusetting}}">菜单设置</navigator>
+        </view>
+         <view class="direc-entry">
+            <navigator url="{{bankcardsetting}}">更改银行卡</navigator>
+        </view>
+    </view>
+</view>

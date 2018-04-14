@@ -1,0 +1,112 @@
+/* menuDetail.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background: #EFEFEF;
+}
+.dish-item{
+  height: 64px;
+  font-size: 12px;
+  background: white;
+  position: relative;
+  margin: 12px;
+  padding-left: 2px;
+}
+.text{
+  width: 400rpx;
+}
+.buttonText{
+  color: #FF9E01;
+}
+.remove{
+  position: absolute;
+  right: 60px;
+  top:2px;
+  height : 25px;
+  width : 40px;
+  font-size: 12px;
+}
+.correct{
+  position: absolute;
+  right: 10px;
+  top:2px;
+  height : 25px;
+  width : 40px;
+  font-size: 12px;
+}
+
+.add-button{
+  margin-top:10px;
+  margin-bottom:10px;
+  width: 60%;
+  margin-left: 20%;
+  color: white;
+  font-size: 14px;
+  background: #FF9E01;
+}
+
+
+.icon {
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-right: 10px;
+}
+
+.content {
+  position: absolute;
+  left: 200rpx;
+}
+
+.dish-item .content .name {
+  margin: 2px 0 8px 0;
+  font-size: 12px;
+  line-height: 14px;
+  height: 14px;
+  color: rgb(7, 17, 27);
+}
+
+.dish-item .content .desc, .extra {
+  font-size: 10px;
+  line-height: 10px;
+  color: rgb(147, 153, 159);
+}
+
+.dish-item .content .desc {
+  margin-bottom: 8px;
+  line-height: 12px;
+}
+
+.dish-item .content .extra .count {
+  margin-right: 12px;
+}
+
+.dish-item .content .price {
+  font-weight: 700px;
+  line-height: 24px;
+}
+
+.dish-item .content .price .now {
+  margin-right: 8px;
+  font-size: 12px;
+  color: rgb(240, 20, 20);
+}
+
+.dish-item .content .price .old {
+  font-size: 10px;
+  color: rgb(147, 153, 159);
+  position: relative;
+  bottom: 6px;
+  text-decoration: line-through;
+}
+
+.undo-or-submit-button{
+  margin-top:10px;
+  margin-bottom:10px;
+  width: 60%;
+  margin-left: 20%;
+  color: white;
+  font-size: 14px;
+  background: #FF9E01;
+}

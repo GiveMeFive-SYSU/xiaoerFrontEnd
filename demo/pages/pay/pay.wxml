@@ -1,0 +1,21 @@
+<!--pay.wxml-->
+<!--<view class = "order-container" style="display:block">-->
+<scroll-view scroll-y="true" class="list-content">
+  <view class="shopcart-food" wx:for="{{bill}}">
+    <text class="name">{{item.name}}</text>
+    <view class="price" >
+      <span>￥{{item.price*item.num}}</span> 
+    </view>
+    <view class="count">
+      <span>×{{item.num}}</span>
+    </view>
+  </view>
+  <view class="beizhu-view" style="height:80px;">
+    <textarea class="beizhu" placeholder="备注忌口..."/>
+  </view>
+  <view class="total" style="display:block">
+    <button class="pay-button">总价：￥{{total}}，确认支付</button>
+  </view>
+</scroll-view>
+
+

@@ -1,0 +1,44 @@
+/* pages/payManager/payManager.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background: #EEEEEE;
+}
+.month{
+  background: white;
+  position: absolute;
+  top: 10%;
+  width: 70%;
+  left: 15%;
+  border-radius: 6px;
+  padding: 5px;
+  color: #FF9E01;
+}
+.year{
+  color: #FF9E01;
+  padding: 5px;
+  border-radius: 6px;
+  background: white;
+  width: 70%;
+  left: 15%;
+  position: absolute;
+  top: 33%;
+}
+.select{
+  color: #FF9E01;
+  padding: 5px;
+  border-radius: 6px;
+  background: white;
+  width: 70%;
+  left: 15%;
+  position: absolute;
+  top: 56%;
+}
+.title{
+  border-bottom: 1px solid #EEEEEE;
+}
+.query{
+  background: #FF9E01;
+  color: white;
+  width: 60%;
+}

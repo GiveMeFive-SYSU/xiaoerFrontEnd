@@ -1,0 +1,37 @@
+/* pages/updatecard/updatecard.wxss */
+page{
+  width: 100%;
+}
+.showCard{
+  border-radius: 8px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  background: #EEEEEE;
+}
+.change-button{
+  position: relative;
+  top: 12px;
+  color: #FF9E01;
+  font-size: 14px;
+}
+.newCard{
+  border-radius: 8px;
+  background: #EEEEEE;
+  position: relative;
+  top: 42px; 
+}
+.num{
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid black;
+}
+.submit{
+  font-size: 14px;
+  color: #FF9E01;
+  margin-top: 6px;
+}

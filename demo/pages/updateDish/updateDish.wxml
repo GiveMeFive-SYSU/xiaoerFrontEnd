@@ -1,0 +1,28 @@
+<!--updateDish.wxml-->
+<view class="dish-container">
+   <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{wrongMessage}}</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">  
+  <view class="dishName">
+    <view class="title">菜名</view>
+    <input class="dish-input" bindfocus="tipsOut" placeholder="请输入菜品名称" name = 'name' value="{{dishname}}"/>
+  </view>
+  <view class="disholdPrice">
+    <view class="title">原价</view>
+    <input class="dish-input" bindfocus="tipsOut" placeholder="请输入菜品原价" name='oldprice' value="{{disholdprice}}"/>
+  </view>
+  <view class="dishPrice">
+    <view class="title">现价</view>
+    <input class="dish-input" bindfocus="tipsOut" placeholder="请输入菜品定价" name='price' value="{{dishprice}}"/>
+  </view>
+  <view class = "dishDescription">
+    <textarea class="descrip-input" placeholder="菜品的介绍，有必要时可以说明菜品的单位，比如'扎','斤'等" name='description' value="{{description}}"/>
+  </view>
+  <view class="dishPicture">
+    <view class="weui-label">修改图片</view>
+    <view class= "image-container" bindtap="clickToChoose">
+      <image class="dish-image" src="{{dishicon}}"/>
+    </view>
+  </view>
+  <button formType="submit" class="submit-button" bind>上传数据</button>
+  </form>
+</view>

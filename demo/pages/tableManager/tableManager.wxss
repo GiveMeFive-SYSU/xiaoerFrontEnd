@@ -1,0 +1,64 @@
+/* tableManager.wxss */
+page{
+  height: 100%;
+  
+}
+.newest-list{
+    display: inline-block;
+    width: 120rpx;
+    height: 120rpx;
+    margin:14rpx;
+    border-radius: 50%;
+    text-align: center;
+    color: #FF9E01;
+    border:1px solid #FF9E01;
+}
+.newest-list:nth-child(5n){
+    margin-right: 0;
+}
+.navi{
+  display: inline-block;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+.newest-list .newest-text{
+    font-size: 32rpx;
+    margin-top: 37rpx;
+    text-align: center;
+}
+.name-input{
+  display: inline-block;
+  width: 400rpx;
+}
+.add-button{
+  border: none;
+  display: inline-block;
+  width:200rpx;
+  font-size: 24rpx;
+  position: absolute;
+  left: 450rpx;
+  color: white;
+  background: #FF9E01;
+}
+
+.addTable{
+  border: 1px solid #FF9E01;
+  border-radius: 10px;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 18%;
+  left: 50rpx;
+}
+
+.submit-button{
+  position: absolute;
+  bottom: 6%;
+  background: #FF9E01;
+  color: white;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 187.5rpx;
+  height: 8%;
+  font-size: 36rpx;
+}

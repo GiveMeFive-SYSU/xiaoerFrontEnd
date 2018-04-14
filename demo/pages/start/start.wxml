@@ -1,0 +1,10 @@
+            <view class="busi-start" catchtap="toBusi">
+                <image class="img" src="/images/seller.png"></image>
+                <text class = "txt">我是商家</text>
+            </view>
+            <view class="cust-start" catchtap="toCust">
+                <image class= "img" src="/images/customer.png"></image>
+                <text class="txt">我是顾客</text>
+            </view>
+
+

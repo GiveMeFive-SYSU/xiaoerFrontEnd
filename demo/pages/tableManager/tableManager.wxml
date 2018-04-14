@@ -1,0 +1,15 @@
+<!--tableManager.wxml-->
+
+<scroll-view scroll-y="true" style="height:70%">
+  <view wx:for="{{Goods}}" class="newest-list">
+    <navigator class="navi" url="../tableDetail/tableDetail?username={{username}}&tablenumber={{item.Tablenumber}}">
+      <view class="newest-text"><text>{{item.Tablenumber}}</text></view>
+    </navigator>
+  </view>
+</scroll-view>
+<view class = "addTable">
+  <input class="name-input" placeholder="填写桌位名字" bindinput="nameinput"></input>
+  <button class="add-button" bindtap="addfunction">添加桌子</button>
+</view>
+<button class="submit-button" bindtap="submit">确认提交</button>
+<toast duration="2000" hidden="{{toastHidden}}" bindchange="toastBindChange">{{message}}</toast> 

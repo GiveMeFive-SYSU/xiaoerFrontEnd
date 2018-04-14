@@ -1,0 +1,6 @@
+<!--tableDetail.wxml-->
+<view class="classname">
+<image src="{{imageUrl}}"></image>
+<button class="btn" bindtap="download"> 点击下载 </button>
+<button class="btn" bindtap="remove">删除桌位</button>
+</view>
