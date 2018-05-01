@@ -11,14 +11,16 @@ page{
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 300rpx;
+  height: 300rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #aaa;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
 .container{
@@ -27,20 +29,22 @@ page{
   background: #EFEFEF;
 }
 .item-view{
-  margin-top: 6px;
-  margin-bottom: 6px;
+  position: relative;
+  margin-bottom: 150rpx;
   display: flex;
   flex-direction: row;
 }
 .input-title{
   width:30%;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
 .input-view{
   padding: 2px;
   background: white;
   border-radius: 8px;
-  width: 66%;
+  width: 100%;
 }
 .input-view-phone{
   padding: 2px;

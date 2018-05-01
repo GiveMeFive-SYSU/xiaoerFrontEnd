@@ -9,13 +9,13 @@ page{
   background: #EFEFEF;
 }
 .icon-view{
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
-  border: 1px solid #FF9E01;
+  border: 1px solid white;
   position: absolute;
   top: 30px;
-  left: 275rpx;
+  left: 240rpx;
   background: white;
 }
 .icon{
@@ -37,13 +37,15 @@ page{
 }
 .input-title{
   width:30%;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
 .input-view{
   padding: 2px;
   background: white;
   border-radius: 8px;
-  width: 66%;
+  width: 100%;
 }
 .input-view-phone{
   padding: 2px;

@@ -6,22 +6,22 @@ page{
 .busi-start{
   bottom: 55%;
   background: white;
-  width:240rpx;
-  height: 240rpx;
+  width:280rpx;
+  height: 280rpx;
   border-radius: 50%;
-  border: 1px solid #FF9E01;
+  border: 5px solid white;
   position: absolute;
-  left: 275rpx;
+  left: 250rpx;
 }
 .cust-start{
   top:55%;
-  background: white;
+  background: #FF9E01;
   position: absolute;
-  left: 275rpx;
-  width:240rpx;
-  height: 240rpx;
+  left: 250rpx;
+  width:280rpx;
+  height: 280rpx;
   border-radius: 50%;
-  border: 1px solid #FF9E01;
+  border: 5px solid #FF9E01;
 }
 
 .img{
@@ -34,5 +34,5 @@ page{
 .txt{
   position: absolute;
   bottom: 20rpx;
-  left: 46rpx;
+  left: 65rpx;
 }
