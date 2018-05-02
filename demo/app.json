@@ -1,7 +1,7 @@
 {
   "pages": [
-        "pages/businessLogin/businessLogin",
     "pages/start/start",
+    "pages/businessLogin/businessLogin",
     "pages/businessRegister/businessRegister",
     "pages/pay/pay",
     "pages/menuManager/menuManager",
