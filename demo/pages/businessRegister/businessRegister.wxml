@@ -16,7 +16,7 @@
                     <input class="weui-input" bindfocus="tipsOut" placeholder="请输入店铺名称" name='restaurantName'/>
                 </view>
             </view>
-            <view class="item-view">
+            <!-- <view class="item-view">
                 <view class="input-title">
                     <view class="weui-label">店主姓名</view>
                 </view>
@@ -25,7 +25,7 @@
                 <view class="input-view">
                     <input class="weui-input" bindfocus="tipsOut" placeholder="请输入店主姓名" name='busiName'/>
                 </view>
-            </view>
+            </view> -->
             <view class="item-view">
                 <view class="input-title">
                     <view class="weui-label">手机号</view>
@@ -59,6 +59,26 @@
             <view class="item-view">
                 <view class="input-view">
                     <input class="weui-input" bindfocus="tipsOut" placeholder="长度大于6位" password="true" name="password"/>
+                </view> 
+            </view>
+            <view class="item-view">
+                <view class="input-title">
+                    <view class="weui-label">卡号</view>
+                </view>
+            </view>
+            <view class="item-view">
+                <view class="input-view">
+                    <input class="weui-input" bindfocus="createSpace" placeholder="请输入卡号" name='creditNo' />
+                </view> 
+            </view>
+            <view class="item-view">
+                <view class="input-title">
+                    <view class="weui-label">持卡人姓名</view>
+                </view>
+            </view>
+            <view class="item-view">
+                <view class="input-view">
+                   <input class="weui-input" bindfocus="tipsOut" placeholder="请输入持卡人姓名" name='managerName'/>
                 </view> 
             </view>
             <!--

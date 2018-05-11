@@ -15,12 +15,11 @@ App({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx0b3b9d62aac2598e&secret=60dcfb42d71d544e7def4ca8686c75ba&grant_type=authorization_code&js_code=' + res.code,
+            url: that.globalData.prefixUrl + '/api/v1/getOpenID?js_code=' + res.code,
             header: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             success: function (res) {
-
               that.globalData.openID = res.data.openid
               console.log(that.globalData.openID)
               console.log(res.data.openid) //获取openid  

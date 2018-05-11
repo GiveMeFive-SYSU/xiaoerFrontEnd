@@ -42,7 +42,9 @@ Page({
     } else {
       console.log(e);
       var that = this;
-      if (this.data.dishicon != null) {
+      if (!this.data.dishicon) {
+        console.log("Upload File");
+        console.log(this.data.dishicon);
         wx.uploadFile({
           url: app.globalData.prefixUrl + '/api/v1/searchFood/updatefood',
           filePath: this.data.dishicon,
@@ -59,7 +61,8 @@ Page({
             key: "1430ec127e097e1113259c5e1be1ba70"
           },
           success: function (res) {
-            var data = res.data
+            console.log("Success");
+            var data = res.data;
             console.log(res.data);
             //do something
             wx.navigateTo({
@@ -68,6 +71,7 @@ Page({
           }
         })
       } else {
+        console.log("No picture");
         wx.request({
           url: app.globalData.prefixUrl + '/api/v1/searchFood/updatefood',
           header: {

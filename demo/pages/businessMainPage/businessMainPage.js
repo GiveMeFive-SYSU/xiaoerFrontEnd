@@ -23,6 +23,34 @@ Page({
         userInfo: userInfo
       })
     })
+    wx.request({
+      url: app.globalData.prefixUrl + "/users/queryshopname",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: {
+        username: options.username,
+      },
+
+      complete: function (res) {
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        }
+        console.log(res);
+        // 登录成功
+        if (res.data.err == 0) {
+          console.log('查询成功');
+          that.setData({
+            name: res.data.shopname
+          })
+          console.log(res.data.shopname);
+        } else {
+          console.log('密码错误');
+        }
+      }
+    })
     console.log(options);
     var menu = "../menuManager/menuManager?username=" + options.username;
     var table = "../tableManager/tableManager?username=" + options.username;

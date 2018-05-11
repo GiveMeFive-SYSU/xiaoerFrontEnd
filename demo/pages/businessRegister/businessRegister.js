@@ -90,22 +90,33 @@ Page({
   },
   formSubmit: function (e) {
     var temp = false;
-    console.log(e.detail.value.managerName);
     if (e.detail.value.restaurantName == '') {
       this.setData({
         wrongMessage : "店铺名不能为空"
       })
       temp = true;
     }
-    if (e.detail.value.managerName == '') {
+    else if (e.detail.value.phone == '') {
       this.setData({
-        wrongMessage : "店主名不能为空"
+        wrongMessage: "手机号不能为空"
       })
       temp = true;
     }
-    if (e.detail.value.password.length < 6) {
+    else if (e.detail.value.password.length < 6) {
       this.setData({
         wrongMessage: "密码位数不得少于6"
+      })
+      temp = true;
+    }
+    else if (e.detail.value.creditNo == '') {
+      this.setData({
+        wrongMessage: "银行卡卡号不能为空"
+      })
+      temp = true;
+    }
+    else if (e.detail.value.managerName == '') {
+      this.setData({
+        wrongMessage: "银行卡持卡人不能为空"
       })
       temp = true;
     }
