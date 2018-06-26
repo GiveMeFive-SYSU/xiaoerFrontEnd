@@ -40,6 +40,15 @@ Page({
     }
     this.setData({foodslength:count});
   },
+  countProperties:function (obj) {  
+    var count = 0;  
+    for(var property in obj) {  
+  if (Object.prototype.hasOwnProperty.call(obj, property)) {
+    count++;
+  }
+}
+return count;  
+},  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -68,7 +77,15 @@ Page({
             console.error('网络请求失败');
             return;
           }
-          console.log(res);
+          var count = that.countProperties(res.data[0].foods);
+          for (var i = 0; i < count; ++i) {
+            if (res.data[0].foods[i].name != 'Test') {
+              res.data[0].foods[i].icon = app.globalData.prefixUrl + '/images/' + res.data[0].foods[i].icon;
+            }
+          }
+          
+          console.log("修改完擦擦擦");
+          console.log(res.data[0].foods);
           that.setData({foods:res.data[0].foods});
           that.countfoods();
           console.log(that.data.foods);

@@ -40,9 +40,10 @@ Page({
             return;
           }
           that.setData({ Goods: res.data, username: options.username, FirstGoods: res.data });
-          console.log(that.data.Goods);
+          
         }
       })
+      
     }
   },
   removeFunction: function (e) {
@@ -189,6 +190,7 @@ Page({
   selectMenu: function (e) {
     if (this.data.isPressed == false) console.log(e.currentTarget.dataset.itemIndex);
     this.data.isPressed = false;
+    console.log("sdjhasdhajsdasjdasjdasdasdasd");
     console.log(this.data.Goods[e.currentTarget.dataset.itemIndex]);
     wx.navigateTo({
       url: '../menuDetail/menuDetail?no=' + this.data.Goods[e.currentTarget.dataset.itemIndex].no + '&typename=' + this.data.Goods[e.currentTarget.dataset.itemIndex].name + '&username=' + this.data.username
