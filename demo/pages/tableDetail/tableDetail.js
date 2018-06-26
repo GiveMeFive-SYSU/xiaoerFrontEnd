@@ -38,10 +38,10 @@ Page({
       }
     })
   },
-  deltablelist :[],
   remove:function() {
     var that = this;
-    this.deltablelist.push(this.data.tablenumber);
+    var mydeltablelist = [];
+    mydeltablelist.push(this.data.tablenumber);
     wx.request({
       url: app.globalData.prefixUrl + "/api/v1/searchTable/deltable",
       header: {
@@ -50,7 +50,7 @@ Page({
       method: "POST",
       data: {
         username: this.data.username,
-        deltablelist: this.deltablelist
+        deltablelist: mydeltablelist
       },
       complete: function (res) {
         if (res == null || res.data == null) {
