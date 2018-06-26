@@ -1,8 +1,6 @@
 {
   "pages": [
     "pages/start/start",
-    "pages/tableDetail/tableDetail",
-
     "pages/businessLogin/businessLogin",
     "pages/businessRegister/businessRegister",
     "pages/pay/pay",
