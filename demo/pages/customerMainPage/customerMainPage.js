@@ -181,7 +181,6 @@ Page({
             console.error('网络请求失败');
             return;
           }
-          console.log("FUCKLGX");
           console.log(res.data);
           that.setData({ goods: res.data });
         }
