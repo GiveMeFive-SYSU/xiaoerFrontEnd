@@ -7,7 +7,8 @@ Page({
   data: {
     imageUrl:null,
     tablenumber:null,
-    username:null
+    username:null,
+    deltablelist: []
   },
 
   /**
@@ -53,11 +54,20 @@ Page({
       }
     })
   },
+<<<<<<< Updated upstream
   remove:function() {
     var that = this;
     var mydeltablelist = "";
     mydeltablelist = this.data.tablenumber;
     console.log(mydeltablelist)
+=======
+  remove: function (options) {
+    console.log("#########################")
+    var that = this;
+    this.data.deltablelist.push(this.data.tablenumber);
+    var Cusername = this.data.username
+    var Cdeltablelist = this.data.deltablelist
+>>>>>>> Stashed changes
     wx.request({
       url: app.globalData.prefixUrl + "/api/v1/searchTable/deltable",
       header: {
@@ -65,8 +75,13 @@ Page({
       },
       method: "POST",
       data: {
+<<<<<<< Updated upstream
         username: this.data.username,
         deltablelist: mydeltablelist,
+=======
+        username: Cusername,
+        deltablelist: Cdeltablelist,
+>>>>>>> Stashed changes
       },
       complete: function (res) {
         if (res == null || res.data == null) {
@@ -74,7 +89,7 @@ Page({
           return;
         }
         console.log(res);
-        that.deltablelist = [];
+        that.data.deltablelist = [];
         wx.redirectTo({
           url: '../tableManager/tableManager?username=' + that.data.username
         })

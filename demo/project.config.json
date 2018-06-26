@@ -9,8 +9,13 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
+<<<<<<< Updated upstream
 	"appid": "wx7fa13bd205d58b40",
 	"projectname": "系统分与设计-小程序",
+=======
+	"appid": "wx0cb2c043eba33b42",
+	"projectname": "OQ",
+>>>>>>> Stashed changes
 	"isGameTourist": false,
 	"condition": {
 		"search": {

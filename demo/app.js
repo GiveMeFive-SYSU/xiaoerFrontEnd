@@ -55,6 +55,10 @@ App({
   globalData: {
     userInfo: null,
     openID: null,
+<<<<<<< Updated upstream
     prefixUrl: "http://172.19.52.208:3000",
+=======
+    prefixUrl: "http://127.0.0.1:3000",
+>>>>>>> Stashed changes
   }
 })
