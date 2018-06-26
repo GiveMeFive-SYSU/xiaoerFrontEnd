@@ -53,10 +53,10 @@ Page({
     var parentIndex = e.currentTarget.dataset.parentindex;
     console.log(index);
     console.log(parentIndex);
-    this.data.goods[parentIndex].foods[index].Count++;
+    this.data.goods[parentIndex].foods[index].num++;
     var mark = 'a' + index + 'b' + parentIndex
     var price = this.data.goods[parentIndex].foods[index].price;
-    var num = this.data.goods[parentIndex].foods[index].Count;
+    var num = this.data.goods[parentIndex].foods[index].num;
     var name = this.data.goods[parentIndex].foods[index].name;
     var obj = { price: price, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
     var carArray1 = this.data.carArray.filter(item => item.mark != mark)
