@@ -24,13 +24,13 @@ Page({
   decreaseCart: function (e) {
     var index = e.currentTarget.dataset.itemIndex;
     var parentIndex = e.currentTarget.dataset.parentindex;
-    this.data.goods[parentIndex].foods[index].Count--;
+    this.data.goods[parentIndex].foods[index].num--;
     var mark = 'a' + index + 'b' + parentIndex
     var price = this.data.goods[parentIndex].foods[index].price;
-    var num = this.data.goods[parentIndex].foods[index].Count;
+    var num = this.data.goods[parentIndex].foods[index].num;
     var name = this.data.goods[parentIndex].foods[index].name;
     var carArray1 = this.data.carArray.filter(item => item.mark != mark)
-    if (this.data.goods[parentIndex].foods[index].Count == 0)
+    if (this.data.goods[parentIndex].foods[index].num == 0)
       this.setData({
         carArray: carArray1,
         goods: this.data.goods
