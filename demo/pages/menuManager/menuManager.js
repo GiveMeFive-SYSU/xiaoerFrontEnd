@@ -137,9 +137,9 @@ Page({
         method: "POST",
         data: {
           username: that.data.username,
-          currentlist: this.Typelist,
-          deletelist: this.dellist,
-          addlist: this.addlist
+          currentlist: that.Typelist,
+          deletelist: that.dellist,
+          addlist: that.addlist
         },
         complete: function (res) {
           if (res == null || res.data == null) {
@@ -189,7 +189,7 @@ Page({
   selectMenu: function (e) {
     if (this.data.isPressed == false) console.log(e.currentTarget.dataset.itemIndex);
     this.data.isPressed = false;
-    
+    console.log(this.data.Goods[e.currentTarget.dataset.itemIndex]);
     wx.navigateTo({
       url: '../menuDetail/menuDetail?no=' + this.data.Goods[e.currentTarget.dataset.itemIndex].no + '&typename=' + this.data.Goods[e.currentTarget.dataset.itemIndex].name + '&username=' + this.data.username
     })
