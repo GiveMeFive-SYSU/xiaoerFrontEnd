@@ -9,8 +9,14 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
+<<<<<<< HEAD
 	"appid": "wx0cb2c043eba33b42",
 	"projectname": "OQ",
+=======
+	"appid": "wx7fa13bd205d58b40",
+	"projectname": "系统分与设计-小程序",
+
+>>>>>>> d8482c1a1b94f31bf7706ec89934971b7925bb23
 	"isGameTourist": false,
 	"condition": {
 		"search": {
