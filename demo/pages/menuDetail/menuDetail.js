@@ -25,7 +25,7 @@ Page({
   correctFunction:function(e) {
     console.log(e);
     wx.redirectTo({
-      url: '../updateDish/updateDish?typename=' + this.data.typename + "&username=" + this.data.username + '&no=' + this.data.typenum + "&dishname=" + this.data.foods[e.currentTarget.dataset.itemIndex].name + "&disholdprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].oldprice + "&dishprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].price + "&dishdescription=" + this.data.foods[e.currentTarget.dataset.itemIndex].description + "&dishiamge=" + this.data.foods[e.currentTarget.dataset.itemIndex].icon ,
+      url: '../updateDish/updateDish?typename=' + this.data.typename + "&username=" + this.data.username + '&no=' + this.data.typenum + "&dishname=" + this.data.foods[e.currentTarget.dataset.itemIndex].name + "&disholdprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].oldprice + "&dishprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].price + "&dishdescription=" + this.data.foods[e.currentTarget.dataset.itemIndex].description + "&dishimage=" + this.data.foods[e.currentTarget.dataset.itemIndex].icon ,
     })
   },
   addDish:function() {

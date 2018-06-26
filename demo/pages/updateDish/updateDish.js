@@ -42,12 +42,12 @@ Page({
     } else {
       console.log(e);
       var that = this;
-      if (!this.data.dishicon) {
+      if (this.data.dishicon != this.data.disholdicon) {
         console.log("Upload File");
         console.log(this.data.dishicon);
         wx.uploadFile({
           url: app.globalData.prefixUrl + '/api/v1/searchFood/updatefood',
-          filePath: this.data.dishicon,
+          filePath: that.data.dishicon,
           name: that.data.username + e.detail.value.name,
           formData: {
             username: that.data.username,
@@ -68,6 +68,9 @@ Page({
             wx.navigateTo({
               url: '../menuDetail/menuDetail?no=' + that.data.typenum + '&typename=' + that.data.typename + '&username=' + that.data.username
             })
+          },
+          fail: function(res) {
+            console.log(res)
           }
         })
       } else {
@@ -120,7 +123,17 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
-    this.setData({ username: options.username, typename: options.typename, typenum: options.no, dishname: options.dishname, dishprice: options.dishprice, disholdprice: options.disholdprice, dishicon: options.dishiamge, disholdicon: options.dishiamge,description: options.dishdescription  });
+    this.setData({
+      username: options.username,
+      typename: options.typename,
+      typenum: options.no,
+      dishname: options.dishname,
+      dishprice: options.dishprice,
+      disholdprice: options.disholdprice,
+      dishicon: app.globalData.prefixUrl + '/images/' + options.dishimage,
+      disholdicon: app.globalData.prefixUrl + '/images/' + options.dishimage,
+      description: options.dishdescription
+    });
   },
 
   /**
