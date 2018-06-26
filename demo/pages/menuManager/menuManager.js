@@ -169,6 +169,13 @@ Page({
   },
   addFunction: function (e) {
     console.log(this.addinput);
+    if (this.addinput == null) {
+      wx.showToast({
+        title: '请输入菜系名字',
+        icon: 'none'
+      })
+      return;
+    }
     var len = this.data.Goods.length;
     var foodobj = new Object();
     foodobj['name'] = this.addinput;

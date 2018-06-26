@@ -36,7 +36,7 @@ Page({
             console.log(res.savedFilePath);
             wx.showToast({
               title: '下载成功',
-              icon: 'succes',
+              icon: 'success',
               duration: 2000,
               mask: true
             })

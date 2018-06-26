@@ -55,6 +55,6 @@ App({
   globalData: {
     userInfo: null,
     openID: null,
-    prefixUrl: "http://172.19.52.208:3000",
+    prefixUrl: "http://192.168.191.1:3000",
   }
 })
