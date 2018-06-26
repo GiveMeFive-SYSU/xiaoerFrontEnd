@@ -55,6 +55,6 @@ App({
   globalData: {
     userInfo: null,
     openID: null,
-    prefixUrl: "https://wuhuo.net.cn",
+    prefixUrl: "http://172.19.52.208:3000",
   }
 })
