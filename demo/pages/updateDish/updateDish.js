@@ -130,8 +130,8 @@ Page({
       dishname: options.dishname,
       dishprice: options.dishprice,
       disholdprice: options.disholdprice,
-      dishicon: app.globalData.prefixUrl + '/images/' + options.dishimage,
-      disholdicon: app.globalData.prefixUrl + '/images/' + options.dishimage,
+      dishicon: options.dishimage,
+      disholdicon:  options.dishimage,
       description: options.dishdescription
     });
   },

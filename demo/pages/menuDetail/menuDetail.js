@@ -77,15 +77,6 @@ return count;
             console.error('网络请求失败');
             return;
           }
-          var count = that.countProperties(res.data[0].foods);
-          for (var i = 0; i < count; ++i) {
-            if (res.data[0].foods[i].name != 'Test') {
-              res.data[0].foods[i].icon = app.globalData.prefixUrl + '/images/' + res.data[0].foods[i].icon;
-            }
-          }
-          
-          console.log("修改完擦擦擦");
-          console.log(res.data[0].foods);
           that.setData({foods:res.data[0].foods});
           that.countfoods();
           console.log(that.data.foods);
