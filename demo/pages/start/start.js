@@ -38,7 +38,8 @@ Page({
   },
   toCust: function () {
     wx.navigateTo({
-      url: '../customerMainPage/customerMainPage'
+      url: '../saoMa/saoMa'
+      //url: '../customerMainPage/customerMainPage'
     })
   }
 })

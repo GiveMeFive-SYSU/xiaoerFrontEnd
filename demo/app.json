@@ -4,7 +4,7 @@
     "pages/businessLogin/businessLogin",
     "pages/businessRegister/businessRegister",
     "pages/pay/pay",
-
+    "pages/saoMa/saoMa",
     "pages/updatecard/updatecard",
     "pages/payManager/payManager",
     "pages/tableManager/tableManager",

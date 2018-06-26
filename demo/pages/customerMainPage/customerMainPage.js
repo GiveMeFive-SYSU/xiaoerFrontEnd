@@ -164,12 +164,13 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.setData({
-      businessId:options.no
+      businessId:options.username,
+      tablenum: options.tablenum
     })
     if (this.data.goods.length == 0) {
       var that = this;
       wx.request({
-        url: app.globalData.prefixUrl + "/api/v1/searchFood?username=ol7Ht0DkjzWUMQIH_bT-_I4r5grQ",
+        url: app.globalData.prefixUrl + "/api/v1/searchFood?username=" + that.data.username,
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
