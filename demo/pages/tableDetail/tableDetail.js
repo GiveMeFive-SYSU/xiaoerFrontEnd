@@ -33,6 +33,21 @@ Page({
           success: function (res) {
             var savedFilePath = res.savedFilePath;
             console.log(res.savedFilePath);
+            wx.showToast({
+              title: '下载成功',
+              icon: 'succes',
+              duration: 2000,
+              mask: true
+            })
+          },
+          fail: function (res) {
+            console.log(res);
+            console.log('fail');
+            wx.showToast({
+              title: '下载失败',
+              duration: 2000,
+              mask: true
+            })
           }
         })
       }
