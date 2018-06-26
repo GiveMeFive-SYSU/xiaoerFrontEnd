@@ -11,10 +11,10 @@ Page({
       success: (res) => {
         console.log(res);
         var url = res.result;
-        var usename = url.substring(url.indexOf('=') + 1, url.indexOf('&'));
+        var username = url.substring(url.indexOf('=') + 1, url.indexOf('&'));
         var tablenum = url.substring(url.lastIndexOf('=')+1);
         that.setData({
-          usename: usename,
+          username: username,
           tablenum: tablenum
         });
         wx.navigateTo({
