@@ -168,11 +168,10 @@ Page({
       tablenum: options.tablenum
     })
     console.log(options);
-    console.log('fuck+++'+options.username);
     if (this.data.goods.length == 0) {
       var that = this;
       wx.request({
-        url: app.globalData.prefixUrl + "/api/v1/searchFood?username=" + that.data.username,
+        url: app.globalData.prefixUrl + "/api/v1/searchFood?username=" + that.data.businessId,
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -182,6 +181,8 @@ Page({
             console.error('网络请求失败');
             return;
           }
+          console.log("FUCKLGX");
+          console.log(res.data);
           that.setData({ goods: res.data });
         }
       })
