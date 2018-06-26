@@ -5,21 +5,24 @@ page{
   background: #E6E6E6;
 }
 .menu-item{
-  height: 25px;
-  font-size: 12px;
+  height: 50px;
+  font-size: 20px;
   background:white;
   position: relative;
   margin: 8px;
   border-radius: 10px;
   padding-left: 2px;
+  padding-top: 15rpx;
 }
 .text{
   color: #FF9E01;
   padding-top: 3px;
   width: 400rpx;
+  margin-top: 10rpx;
 }
 .buttonText{
   color: #FF9E01;
+  font-size: 20px;
 }
 .toTop{
   position: absolute;
@@ -28,6 +31,7 @@ page{
   height : 25px;
   width : 40px;
   font-size: 12px;
+  margin-top: 20rpx;
 }
 .remove{
   position: absolute;
@@ -36,6 +40,7 @@ page{
   height : 25px;
   width : 40px;
   font-size: 12px;
+  margin-top: 20rpx;
 }
 
 .bottom-add{
