@@ -1,3 +1,9 @@
+.img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .btn{
   margin: 10px;
   background: #FF9E01;

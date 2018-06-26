@@ -1,6 +1,6 @@
 {
   "pages": [
-
+    "pages/tableDetail/tableDetail",
     "pages/start/start",
     "pages/businessLogin/businessLogin",
     "pages/businessRegister/businessRegister",
@@ -9,10 +9,10 @@
     "pages/updatecard/updatecard",
     "pages/payManager/payManager",
     "pages/tableManager/tableManager",
-    "pages/tableDetail/tableDetail",
+
     "pages/menuDetail/menuDetail",
     "pages/businessMainPage/businessMainPage",
-        "pages/menuManager/menuManager",
+    "pages/menuManager/menuManager",
     "pages/updateDish/updateDish",
     "pages/addDish/addDish",
     "pages/customerMainPage/customerMainPage",
