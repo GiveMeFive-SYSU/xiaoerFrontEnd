@@ -33,6 +33,10 @@ Page({
           success: function (res) {
             var savedFilePath = res.savedFilePath;
             console.log(res.savedFilePath);
+          },
+          fail: function (res) {
+            console.log(res)
+            console.log('fail')
           }
         })
       }
