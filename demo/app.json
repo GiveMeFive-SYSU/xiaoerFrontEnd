@@ -1,10 +1,11 @@
 {
   "pages": [
+        "pages/menuManager/menuManager",
     "pages/start/start",
     "pages/businessLogin/businessLogin",
     "pages/businessRegister/businessRegister",
     "pages/pay/pay",
-    "pages/menuManager/menuManager",
+
     "pages/updatecard/updatecard",
     "pages/payManager/payManager",
     "pages/tableManager/tableManager",
