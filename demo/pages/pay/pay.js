@@ -15,7 +15,7 @@ Page({
     Ordertime:"",
     Tablenumber:"",
     Tastenote:"",
-    Orderdrtail:[]
+    Orderdetail:{}
   },
 
   /**
@@ -41,38 +41,66 @@ Page({
     console.log(this.data);
     
     var j = 0;
+    var temp_order = [];
     for (var i = 0; i < this.data.bill.length; i++) {
-      
+      var perorderdetail =[]
       var t = this.data.bill[i].price*this.data.bill[i].num;
       j += t;
-      
+      perorderdetail['dishname'] = this.data.bill[i].name;
+      perorderdetail['dishcount'] = this.data.bill[i].num;
+      perorderdetail['dishprice'] = this.data.bill[i].price;
+      temp_order.push(perorderdetail);
     }
     this.setData({
-      total:j
+      total:j,
+      Orderdetail: temp_order
     })
    // for (var i = 0; i < this.data.bill.length; i++) this.data.text += this.data.bill[i].name + '\n';
   },
   submitOrder: function() {
     console.log("提交订单");
     var that = this;
+    var temp_order = {};
+    for (var i = 0; i < this.data.bill.length; i++) {
+      var perorderdetail = {}
+      perorderdetail['dishname'] = this.data.bill[i].name;
+      perorderdetail['dishcount'] = this.data.bill[i].num;
+      perorderdetail['dishprice'] = this.data.bill[i].price;
+      temp_order[i] = perorderdetail;
+    }
     wx.request({
       url: app.globalData.prefixUrl + "/api/v1/searchOrder/addorder",
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       method: "POST",
-      // params:
       data: {
+        ordertail: JSON.stringify(temp_order),
         username: that.data.businessId,
         Ordernumber: that.data.Ordernumber,
         Ordertime: that.data.Ordertime,
         Tablenumber: that.data.Tablenumber,
         Tastenote: that.data.Tastenote,
         Price: that.data.total,
-        // ordertail:
       },
       complete: function (res) {
-        console.log("增加订单成功")
+        console.log("增加订单成功");
+      }
+    })
+    wx.request({
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/addorderDetail",
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: "POST",
+      data: {
+        ordertail: JSON.stringify(temp_order),
+        username: that.data.businessId,
+        Ordernumber: that.data.Ordernumber,
+        Orderlen: that.data.bill.length
+      },
+      complete: function (res) {
+        console.log("增加订单详情成功");
       }
     })
   },
