@@ -73,7 +73,7 @@ Page({
     var that = this;
     // if (this.data.tables.length != 0) return;
     wx.request({
-      url: app.globalData.prefixUrl + '/api/v1/sarchOrder?username=' + app.getOpenid(),
+      url: app.globalData.prefixUrl + '/api/v1/searchOrder?username=' + app.getOpenid(),
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
