@@ -186,7 +186,6 @@ Page({
           that.setData({ goods: res.data });
         }
       })
-<<<<<<< Updated upstream
       wx.request({
         url: app.globalData.prefixUrl + "/users/queryshopname?username=" + that.data.businessId,
         header: {
@@ -203,9 +202,6 @@ Page({
           that.setData({ shopname: res.data });
         }
       })
-=======
-      
->>>>>>> Stashed changes
     }
   },
   toBusi:function() {
