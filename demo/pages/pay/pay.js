@@ -14,7 +14,8 @@ Page({
     Ordernumber: "",
     Ordertime:"",
     Tablenumber:"",
-    Tastenote:""
+    Tastenote:"",
+    Orderdrtail:[]
   },
 
   /**
@@ -44,6 +45,7 @@ Page({
       
       var t = this.data.bill[i].price*this.data.bill[i].num;
       j += t;
+      
     }
     this.setData({
       total:j
@@ -59,13 +61,15 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       method: "POST",
+      // params:
       data: {
         username: that.data.businessId,
         Ordernumber: that.data.Ordernumber,
         Ordertime: that.data.Ordertime,
         Tablenumber: that.data.Tablenumber,
         Tastenote: that.data.Tastenote,
-        Price: that.data.total
+        Price: that.data.total,
+        // ordertail:
       },
       complete: function (res) {
         console.log("增加订单成功")
