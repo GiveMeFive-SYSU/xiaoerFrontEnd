@@ -85,6 +85,11 @@ Page({
       },
       complete: function (res) {
         console.log("增加订单成功");
+        wx.showToast({
+          title: '支付成功',
+          icon: 'success',
+          duration: 2000
+        })
       }
     })
     wx.request({
