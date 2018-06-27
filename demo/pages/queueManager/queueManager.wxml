@@ -9,6 +9,6 @@
         <text class="dish-info">￥{{dish.price}}</text>
       </view>
     </scroll-view>
-    <!-- <button class="finish-btn" size="mini" type="primary" bindtap="finishOrder">完成</button> -->
+     <button class="finish-btn" size="mini" type="primary" bindtap="finishOrder">完成</button> 
   </view>
 </view>
