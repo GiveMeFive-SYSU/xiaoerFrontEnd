@@ -1,0 +1,14 @@
+<!--queueManager.wxml-->
+<view class="cards-view">
+  <view class="card" wx:for="{{tables}}" wx:for-item="table">
+    <view class="table-num">{{table.tableno}}</view>
+    <scroll-view scroll-y="true" class="dish-card">
+      <view wx:for="{{table.order.dishes}}" wx:for-item="dish">
+        <text class="dish-info">{{dish.dishname}}</text>
+        <text class="dish-info">{{dish.num}}</text>
+        <text class="dish-info">￥{{dish.price}}</text>
+      </view>
+    </scroll-view>
+    <!-- <button class="finish-btn" size="mini" type="primary" bindtap="finishOrder">完成</button> -->
+  </view>
+</view>

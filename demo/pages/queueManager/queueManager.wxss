@@ -1,1 +1,40 @@
 /* pages/queueManager/queueManager.wxss */
+page {
+  height: 100%;
+  width: 100%;
+  background: #E6E6E6;
+}
+
+.cards-view {
+  margin-top: 7%;
+}
+
+.card {
+  margin-top: 5%;
+  height: 165px;
+  width: 95%;
+  border: 1px solid black;
+}
+
+.dish-card {
+  margin-top: 10px;
+  height: 100px;
+  width: 90%;
+}
+
+.table-num {
+  margin-top: 0;
+  height: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.dish-info {
+  margin-left: 15%;
+}
+
+.finish-btn {
+  margin-top: 10px;
+  height: 30px;
+  width: 100%;
+}
