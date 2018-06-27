@@ -11,7 +11,8 @@ Page({
     fold: true,
     selectFoods: [{ price: 20, count: 2 }],
     cartShow: 'none',
-    businessId:0
+    businessId: 0,
+    shopName: ''
   },
   selectMenu: function (e) {
     var index = e.currentTarget.dataset.itemIndex;
@@ -184,6 +185,9 @@ Page({
           console.log(res.data);
           that.setData({ goods: res.data });
         }
+      })
+      wx.setNavigationBarTitle({
+        title: that.data.shopName,
       })
     }
   },

@@ -54,9 +54,17 @@ Page({
     console.log(options);
     var menu = "../menuManager/menuManager?username=" + options.username;
     var table = "../tableManager/tableManager?username=" + options.username;
+    var queue = "../queueManager/queueManager?username=" + options.username;
     var pay = "../payManager/payManager?username=" + options.username;
     var card = "../updatecard/updatecard?username=" + options.username;
-    this.setData({ bankcardsetting:card,menusetting: menu, tablesetting: table, name: options.shopname, paysetting:pay});
+    this.setData({
+      bankcardsetting: card,
+      menusetting: menu,
+      tablesetting: table,
+      name: options.shopname,
+      paysetting: pay,
+      queuesetting: queue
+    });
   }
  
   

@@ -19,6 +19,9 @@
         <view class="direc-entry">
             <navigator url="{{menusetting}}">菜单设置</navigator>
         </view>
+        <view class="direc-entry">
+          <navigator url="{{queuesetting}}">排队管理</navigator>
+        </view>
          <view class="direc-entry">
             <navigator url="{{bankcardsetting}}">更改银行卡</navigator>
         </view>

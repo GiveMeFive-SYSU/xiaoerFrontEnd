@@ -12,6 +12,7 @@
     "pages/menuDetail/menuDetail",
     "pages/businessMainPage/businessMainPage",
     "pages/menuManager/menuManager",
+    "pages/queueManager/queueManager",
     "pages/updateDish/updateDish",
     "pages/addDish/addDish",
     "pages/customerMainPage/customerMainPage",
