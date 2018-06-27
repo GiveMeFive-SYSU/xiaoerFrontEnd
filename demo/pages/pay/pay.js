@@ -6,7 +6,13 @@ Page({
    */
   data: {
     bill: [],
-    total: 0
+    total: 0,
+    businessId:"",
+    userId: "",
+    payTime:"",
+    tableNum:"",
+    foods:[],
+    note:""
   },
 
   /**
