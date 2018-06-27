@@ -32,7 +32,19 @@ Page({
     }
     if (e.detail.value.price == '') {
       this.setData({
-        wrongMessage: this.data.wrongMessage + "现价不能为空"
+        wrongMessage: this.data.wrongMessage + "现价不能为空\n"
+      })
+      temp = true;
+    }
+    if (e.detail.value.description == '') {
+      this.setData({
+        wrongMessage: this.data.wrongMessage + "菜品介绍不能为空\n"
+      })
+      temp = true;
+    }
+    if (this.data.image == null) {
+      this.setData({
+        wrongMessage: this.data.wrongMessage + "图片不能为空\n"
       })
       temp = true;
     }
@@ -43,57 +55,31 @@ Page({
     } else {
       console.log(e);
       var that = this;
-      if (that.data.image != null) {
-        wx.uploadFile({
-          url: app.globalData.prefixUrl + '/api/v1/searchFood/addfood',
-          filePath: that.data.image,
-          name: that.data.username + e.detail.value.name,
-          formData: {
-            username: that.data.username,
-            dishname: e.detail.value.name,
-            disholdprice: e.detail.value.oldprice,
-            dishprice: e.detail.value.price,
-            dishtypename: this.data.typename,
-            dishtype: this.data.typenum,
-            dishdescription: e.detail.value.description,
-            key: "1430ec127e097e1113259c5e1be1ba70"
-          },
-          success: function (res) {
-            var data = res.data
-            //do something
-            wx.navigateTo({
-              url: '../menuDetail/menuDetail?no=' + that.data.typenum + '&typename=' + that.data.typename + '&username=' + that.data.username
-            })
-          }
-        })
-      } else {
-        wx.request({
-          url: app.globalData.prefixUrl + '/api/v1/searchFood/addfood',
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          method: "POST",
-          data: {
-            username: that.data.username,
-            dishname: e.detail.value.name,
-            disholdprice: e.detail.value.oldprice,
-            dishprice: e.detail.value.price,
-            dishtypename: this.data.typename,
-            dishtype: this.data.typenum,
-            dishdescription: e.detail.value.description,
-            key: "1430ec127e097e1113259c5e1be1ba70"
-          },
-          complete: function (res) {
-            if (res == null || res.data == null) {
-              console.error('网络请求失败');
-              return;
-            }
-            wx.navigateTo({
-              url: '../menuDetail/menuDetail?no=' + that.data.typenum + '&typename=' + that.data.typename + '&username=' + that.data.username
-            })
-          }
-        })
+      if (e.detail.value.oldprice == '') {
+        e.detail.value.oldprice = e.detail.value.price;
       }
+      wx.uploadFile({
+        url: app.globalData.prefixUrl + '/api/v1/searchFood/addfood',
+        filePath: that.data.image,
+        name: that.data.username + e.detail.value.name,
+        formData: {
+          username: that.data.username,
+          dishname: e.detail.value.name,
+          disholdprice: e.detail.value.oldprice,
+          dishprice: e.detail.value.price,
+          dishtypename: this.data.typename,
+          dishtype: this.data.typenum,
+          dishdescription: e.detail.value.description,
+          key: "1430ec127e097e1113259c5e1be1ba70"
+        },
+        success: function (res) {
+          var data = res.data
+          //do something
+          wx.navigateTo({
+            url: '../menuDetail/menuDetail?no=' + that.data.typenum + '&typename=' + that.data.typename + '&username=' + that.data.username
+          })
+        }
+      })
     }
 
   },
@@ -180,7 +166,8 @@ Page({
   },
   tipsOut: function (e) {
     this.setData({
-      showTopTips: false
+      showTopTips: false,
+      wrongMessage: ''
     })
   }
 })
