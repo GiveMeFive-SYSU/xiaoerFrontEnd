@@ -23,7 +23,7 @@
           <navigator url="{{queuesetting}}">排队管理</navigator>
         </view>
          <view class="direc-entry">
-            <navigator url="{{bankcardsetting}}">更改银行卡</navigator>
+            <navigator url="{{shopnamesetting}}">更改店铺名</navigator>
         </view>
     </view>
 </view>

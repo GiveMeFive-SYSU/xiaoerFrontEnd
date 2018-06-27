@@ -175,7 +175,6 @@ Page({
       businessId:options.username,
       tablenum: options.tablenum
     })
-    console.log(options);
     if (this.data.goods.length == 0) {
       var that = this;
       wx.request({

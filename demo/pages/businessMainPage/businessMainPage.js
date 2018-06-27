@@ -10,7 +10,7 @@ Page({
     menusetting:null,
     tablesetting:null,
     paysetting:null,
-    bankcardsetting:null,
+    shopnamesetting:null,
     userInfo:[]
   },
   onLoad(options) {
@@ -52,9 +52,9 @@ Page({
     var table = "../tableManager/tableManager?username=" + options.username;
     var queue = "../queueManager/queueManager?username=" + options.username;
     var pay = "../payManager/payManager?username=" + options.username;
-    var card = "../updatecard/updatecard?username=" + options.username;
+    var shopname = "../updateShopname/updateShopname";
     this.setData({
-      bankcardsetting: card,
+      shopnamesetting: shopname,
       menusetting: menu,
       tablesetting: table,
       name: options.shopname,

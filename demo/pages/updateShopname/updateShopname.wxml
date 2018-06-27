@@ -1,0 +1,7 @@
+<!--pages/updatecard/updatecard.wxml-->
+<view class="showCard">
+  <input value='{{shopname}}' bindinput='inputNewShopname'></input>
+  <view class="change-button" bindtap="updateShopname">
+    更换店铺名
+  </view>
+</view>

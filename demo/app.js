@@ -20,6 +20,7 @@ App({
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             success: function (res) {
+              console.log(res)
               that.globalData.openID = res.data.openid
               console.log(that.globalData.openID)
               console.log(res.data.openid) //获取openid  
