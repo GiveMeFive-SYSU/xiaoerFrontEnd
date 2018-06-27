@@ -37,6 +37,7 @@ Page({
     
   },
   toCust: function () {
+    var that = this;
     wx.navigateTo({
       url: '../saoMa/saoMa'
       //url: '../customerMainPage/customerMainPage'

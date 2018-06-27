@@ -1,4 +1,5 @@
 var app = getApp();
+var utils = require('../../utils/util.js')
 Page({
   data: {
     goods: [],
@@ -9,6 +10,7 @@ Page({
     totalCount: 0, // 总商品数
     carArray: [],
     fold: true,
+    tablenum:"",
     selectFoods: [{ price: 20, count: 2 }],
     cartShow: 'none',
     businessId: 0,
@@ -115,8 +117,13 @@ Page({
     }
     console.log(this.data.carArray)
     console.log(JSON.stringify(this.data.carArray))
+    var dt = new Date();
+    var payTime = utils.formatTime(dt);
+    var ordernum = this.data.businessId + this.data.tablenum + utils.formatTime2(dt)
+    ordernum = 
     wx.navigateTo({
-      url: '../pay/pay?bill=' + JSON.stringify(this.data.carArray)
+      url: '../pay/pay?bill=' + JSON.stringify(this.data.carArray) + '&' +'businessId='
+      + this.data.businessId + '&' + 'ordernum=' + ordernum + '&' + 'paytime='+payTime+'&' +'tablenum=' + this.data.tablenum
     })
   },
   //彈起購物車
