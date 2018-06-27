@@ -24,15 +24,11 @@ Page({
       })
     })
     wx.request({
-      url: app.globalData.prefixUrl + "/users/queryshopname",
+      url: app.globalData.prefixUrl + "/users/queryshopname?username=" + options.username,
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      method: "POST",
-      data: {
-        username: options.username,
-      },
-
+      method: "GET",
       complete: function (res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
