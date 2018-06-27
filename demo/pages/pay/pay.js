@@ -1,18 +1,20 @@
 // pay.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
+  // param.username, param.Ordernumber, param.Ordertime, param.Tablenumber, param.Tastenote || "null", param.Price
+  //param.username, param.ordernumber,param.ordertail[i].dishname, param.ordertail[i].dishcount
   data: {
     bill: [],
     total: 0,
-    businessId:"",
-    userId: "",
-    payTime:"",
-    tableNum:"",
-    foods:[],
-    note:""
+    businessId: "",
+    Ordernumber: "",
+    Ordertime:"",
+    Tablenumber:"",
+    Tastenote:""
   },
 
   /**
@@ -20,15 +22,23 @@ Page({
    */
   onLoad: function (options) {
     //将字符串转换成对象
-//console.log(options.bill);
+    console.log("PAY test")
+    console.log(options);
+    this.data.businessId = options.businessId;
+    this.data.Ordernumber = options.ordernum;
+    this.data.Tablenumber = options.tablenum;
+    this.data.Ordertime = options.paytime;
+
 //this.data.bill = options.bill;
 //console.log(this.data.bill);
     
     this.setData({
       bill: JSON.parse(options.bill)
     });
+
     console.log("lala");
-    console.log(this.data.bill);
+    console.log(this.data);
+    
     var j = 0;
     for (var i = 0; i < this.data.bill.length; i++) {
       
@@ -39,6 +49,28 @@ Page({
       total:j
     })
    // for (var i = 0; i < this.data.bill.length; i++) this.data.text += this.data.bill[i].name + '\n';
+  },
+  submitOrder: function() {
+    console.log("提交订单");
+    var that = this;
+    wx.request({
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/addorder",
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: "POST",
+      data: {
+        username: that.data.businessId,
+        Ordernumber: that.data.Ordernumber,
+        Ordertime: that.data.Ordertime,
+        Tablenumber: that.data.Tablenumber,
+        Tastenote: that.data.Tastenote,
+        Price: that.data.total
+      },
+      complete: function (res) {
+        console.log("增加订单成功")
+      }
+    })
   },
 
   /**

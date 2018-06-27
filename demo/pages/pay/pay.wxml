@@ -14,7 +14,7 @@
     <textarea class="beizhu" placeholder="备注忌口..."/>
   </view>
   <view class="total" style="display:block">
-    <button class="pay-button">总价：￥{{total}}，确认支付</button>
+    <button class="pay-button" catchtap="submitOrder">总价：￥{{total}}，确认支付</button>
   </view>
 </scroll-view>
 
