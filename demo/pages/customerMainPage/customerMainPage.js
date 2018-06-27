@@ -11,8 +11,13 @@ Page({
     fold: true,
     selectFoods: [{ price: 20, count: 2 }],
     cartShow: 'none',
+<<<<<<< HEAD
     businessId: 0,
     shopName: ''
+=======
+    businessId:0,
+    shopname: ""
+>>>>>>> a71a98a84cdbb5971835c75a92e2bc093270a9d8
   },
   selectMenu: function (e) {
     var index = e.currentTarget.dataset.itemIndex;
@@ -186,8 +191,26 @@ Page({
           that.setData({ goods: res.data });
         }
       })
+<<<<<<< HEAD
       wx.setNavigationBarTitle({
         title: that.data.shopName,
+=======
+      wx.request({
+        url: app.globalData.prefixUrl + "/users/queryshopname?username=" + that.data.businessId,
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        method: "GET",
+        complete: function (res) {
+          if (res == null || res.data == null) {
+            console.error('网络请求失败');
+            return;
+          }
+          console.log("test shopname");
+          console.log(res.data);
+          that.setData({ shopname: res.data });
+        }
+>>>>>>> a71a98a84cdbb5971835c75a92e2bc093270a9d8
       })
     }
   },

@@ -49,9 +49,7 @@ App({
   },
   getOpenid: function () {
     return this.globalData.openID;
-  }
-  ,
-
+  },
   globalData: {
     userInfo: null,
     openID: null,
