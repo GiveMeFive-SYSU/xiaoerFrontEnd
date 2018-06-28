@@ -42,7 +42,7 @@ Page({
       enddateValue: date[0],
       enddate: date[0]
     });
-    var curmonthprev = timefactor[0] + '-' + timefactor[1] + '-' + timefactor[2];
+    var curmonthprev = timefactor[0] + '-' + timefactor[1] + '-' + '01';
     var yearnum = parseInt(timefactor[0]);
     var curmonthnext = timefactor[0] + '-' + timefactor[1] + '-';
     if ((yearnum % 4 == 0) && (yearnum % 100 != 0 || yearnum % 400 == 0)) {
@@ -50,53 +50,60 @@ Page({
     } else {
       curmonthnext = curmonthnext + this.dataArr[0][parseInt(timefactor[1]) - 1];
     }
-    var curmonth = curmonthprev + '$' + curmonthnext;
-    var curyear = timefactor[0] + '-' + '01-01' + '$' + timefactor[0] + '-12-31';
+    var curmonth = curmonthprev +  '$' + curmonthnext;
+    var yearstart = timefactor[0] + '-' + '01-01';
+    var yearend = timefactor[0] + '-12-31';
+    var curyear = timefactor[0] + '-' + '01-01' +  '$'+ timefactor[0] + '-12-31';
     this.querylist = [];
     this.querylist.push(curmonth);
     this.querylist.push(curyear);
     var that = this;
     wx.request({
-      url: app.globalData.prefixUrl + "/api/v1/searchOrder",
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + options.username + "&timeStart=" + curmonthprev + " 00:00:00&timeEnd=" + curmonthnext + " 23:59:59",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      method: "POST",
-      data: {
-        username: options.username,
-        currentlist: that.querylist
-      },
-      complete: function(res) {
+      method: "GET",
+      complete: function (res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
-          that.setData({
-            toastHidden: !that.data.toastHidden,
-            message: '网络请求失败'
-          })
           return;
         }
         console.log(res);
-        for (var i in res.data) {
-          if (res.data[i].flag == 'm') {
-            var tempmonthmoney = 0;
-            for (var j in res.data[i].data) {
-              tempmonthmoney += res.data[i].data[j].Price;
-            }
-            that.setData({
-              monthmoney: tempmonthmoney,
-              monthnumber: res.data[i].data.length
-            });
-          } else {
-            var tempmyearmoney = 0;
-            for (var j in res.data[i].data) {
-              tempmyearmoney += res.data[i].data[j].Price;
-            }
-            console.log('year number: ' + res.data);
-            that.setData({
-              yearmoney: tempmyearmoney,
-              yearnumber: res.data[i].data.length
-            });
-          }
+        // 查询
+        if (res.data) {
+          console.log('查询成功');
+          that.setData({
+            monthnumber: res.data.data[0].cases,
+            monthmoney: res.data.data[0].total
+          })
+
+        } else {
+          console.log('查询错误');
+        }
+      }
+    });
+    wx.request({
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + options.username + "&timeStart=" + yearstart + " 00:00:00&timeEnd=" + yearend + " 23:59:59",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "GET",
+      complete: function (res) {
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        }
+        // 查询
+        if (res.data) {
+          console.log('查询成功');
+          that.setData({
+            yearnumber: res.data.data[0].cases,
+            yearmoney: res.data.data[0].total
+          })
+
+        } else {
+          console.log('查询错误');
         }
       }
     })
@@ -120,37 +127,27 @@ Page({
     console.log(querystr);
     this.querylist.push(querystr);
     wx.request({
-      url: app.globalData.prefixUrl + "/api/v1/searchOrder",
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + that.data.username + "&timeStart=" + that.data.startdate + " 00:00:00&timeEnd=" + that.data.enddate + " 23:59:59",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      method: "POST",
-      data: {
-        username: this.data.username,
-        currentlist: this.querylist
-      },
-      complete: function(res) {
+      method: "GET",
+      complete: function (res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
-          that.setData({
-            toastHidden: !that.data.toastHidden,
-            message: '网络请求失败'
-          })
           return;
         }
-        console.log(res);
-        that.setData({
-          toastHidden: !that.data.toastHidden,
-          message: '查询成功'
-        })
-        var tempmoney = 0;
-        for (var j in res.data[0].data) {
-          tempmoney += res.data[0].data[j].Price;
+        // 查询
+        if (res.data) {
+          console.log('查询成功');
+          that.setData({
+            allnumber: res.data.data[0].cases,
+            allmoney: res.data.data[0].total
+          })
+
+        } else {
+          console.log('查询错误');
         }
-        that.setData({
-          allmoney: tempmoney,
-          allnumber: res.data[0].data.length
-        });
       }
     })
   },

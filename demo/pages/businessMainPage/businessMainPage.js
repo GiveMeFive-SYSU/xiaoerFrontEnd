@@ -64,11 +64,13 @@ Page({
         // 查询
         if (res.data) {
           console.log('查询成功');
+          if (res.data.data[0].total == null) {
+            res.data.data[0].total = 0
+          }
           that.setData({
             cases: res.data.data[0].cases,
             money: res.data.data[0].total
           })
-          
         } else {
           console.log('密码错误');
         }

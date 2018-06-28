@@ -3,7 +3,7 @@
   <scroll-view class="dish-container" scroll-y="true">
     <view wx:for="{{foods}}" bindtap="selectDish" class="dish-item" data-item-index="{{index}}">
       <view class="icon">
-        <image src="{{item.icon}}" style="width: 57px;height: 57px"></image>
+        <image src="{{item.icon}}" class='tupian'></image>
       </view>
       <view class="content">
         <view class="name">{{item.name}}</view>
@@ -19,8 +19,8 @@
         <text class="buttonText">修改</text>
       </view>
     </view>
-  <button class="undo-or-submit-button" bindtap="Undo"> 撤销更改 </button>
-    <button class="undo-or-submit-button" bindtap="Submit"> 确认更改 </button>
+  <!-- <button class="undo-or-submit-button" bindtap="Undo"> 撤销更改 </button>
+    <button class="undo-or-submit-button" bindtap="Submit"> 确认更改 </button> -->
       <button class="add-button" bindtap="addDish">添加新菜品</button>
     </scroll-view>
 </view>
