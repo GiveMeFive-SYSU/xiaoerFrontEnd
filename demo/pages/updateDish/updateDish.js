@@ -19,6 +19,12 @@ Page({
     username:'',
   },
 
+  bindTextAreaBlur: function (e) {
+    this.setData({
+      description: e.detail.value
+    })
+  }, 
+
   formSubmit: function (e) {
     console.log(e);
     var temp = false;
@@ -58,7 +64,7 @@ Page({
             dishprice: e.detail.value.price,
             dishtypename: that.data.typename,
             dishtype: that.data.typenum,
-            dishdescription: e.detail.value.description,
+            dishdescription: that.data.description,
             key: "1430ec127e097e1113259c5e1be1ba70"
           },
           success: function (res) {

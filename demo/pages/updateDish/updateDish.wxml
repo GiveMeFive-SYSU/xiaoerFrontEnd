@@ -15,7 +15,7 @@
     <input class="dish-input" bindfocus="tipsOut" placeholder="请输入菜品定价" name='price' value="{{dishprice}}"/>
   </view>
   <view class = "dishDescription">
-    <textarea class="descrip-input" placeholder="菜品的介绍，有必要时可以说明菜品的单位，比如'扎','斤'等" name='description' value="{{description}}"/>
+    <textarea bindblur="bindTextAreaBlur" class="descrip-input" placeholder="菜品的介绍，有必要时可以说明菜品的单位，比如'扎','斤'等" name='description' value="{{description}}"/>
   </view>
   <view class="dishPicture">
     <view class="weui-label">修改图片</view>
