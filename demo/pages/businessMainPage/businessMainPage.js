@@ -1,5 +1,6 @@
 // page/component/new-pages/user/user.js
 var app = getApp();
+var utils = require("../../utils/util.js")
 Page({
   data: {
     thumb: '',
@@ -48,7 +49,7 @@ Page({
       }
     });
     wx.request({
-      url: app.globalData.prefixUrl + "/users/queryshopname?username=" + options.username,
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + options.username + "&timeStart=" + utils.getYearAndDate() +" 00:00:00&timeEnd="+utils.getYearAndDate()+" 23:59:59",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -58,19 +59,20 @@ Page({
           console.error('网络请求失败');
           return;
         }
+        console.log('########查询订单数量和总价')
         console.log(res);
-        // 登录成功
-        if (res.data.err == 0) {
+        // 查询
+        if (res.data) {
           console.log('查询成功');
           that.setData({
-            name: res.data.shopname
+            cases: res.data.data[0].cases,
+            money: res.data.data[0].total
           })
-          console.log(res.data.shopname);
         } else {
           console.log('密码错误');
         }
       }
-    })
+    });
     console.log(options);
     var menu = "../menuManager/menuManager?username=" + options.username;
     var table = "../tableManager/tableManager?username=" + options.username;
