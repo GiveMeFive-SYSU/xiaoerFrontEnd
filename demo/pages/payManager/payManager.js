@@ -73,6 +73,9 @@ Page({
         // 查询
         if (res.data) {
           console.log('查询成功');
+          if (res.data.data[0].total == null) {
+            res.data.data[0].total = 0;
+          }
           that.setData({
             monthnumber: res.data.data[0].cases,
             monthmoney: res.data.data[0].total
@@ -97,6 +100,9 @@ Page({
         // 查询
         if (res.data) {
           console.log('查询成功');
+          if (res.data.data[0].total == null) {
+            res.data.data[0].total = 0;
+          }
           that.setData({
             yearnumber: res.data.data[0].cases,
             yearmoney: res.data.data[0].total
@@ -140,6 +146,9 @@ Page({
         // 查询
         if (res.data) {
           console.log('查询成功');
+          if (res.data.data[0].total == null) {
+            res.data.data[0].total = 0;
+          }
           that.setData({
             allnumber: res.data.data[0].cases,
             allmoney: res.data.data[0].total
