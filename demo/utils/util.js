@@ -22,7 +22,8 @@ function formatTime2(date) {
 
   return [year, month, day].map(formatNumber).join('_') + '_' + [hour, minute, second].map(formatNumber).join('_')
 }
-function getDate(date) {
+function getYearAndDate() {
+  var date = new Date()
   var year = date.getFullYear()
   var month = date.getMonth() + 1
   var day = date.getDate()
@@ -43,5 +44,5 @@ function formatNumber(n) {
 module.exports = {
   formatTime: formatTime,
   formatTime2: formatTime2,
-  getDate: getDate,
+  getYearAndDate: getYearAndDate,
 }

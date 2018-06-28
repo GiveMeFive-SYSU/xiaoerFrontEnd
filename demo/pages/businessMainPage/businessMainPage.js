@@ -47,31 +47,33 @@ Page({
           console.log('密码错误');
         }
       }
-    })
-    // wx.request({
-    //   url: app.globalData.prefixUrl + "/users/querTodayOrder?username=" + options.username + "&ordertime=" + utils.getDate(),
-    //   header: {
-    //     "Content-Type": "application/x-www-form-urlencoded"
-    //   },
-    //   method: "GET",
-    //   complete: function (res) {
-    //     if (res == null || res.data == null) {
-    //       console.error('网络请求失败');
-    //       return;
-    //     }
-    //     console.log(res);
-    //     // 登录成功
-    //     if (res.data.err == 0) {
-    //       console.log('查询成功');
-    //       that.setData({
-    //         name: res.data.shopname
-    //       })
-    //       console.log(res.data.shopname);
-    //     } else {
-    //       console.log('密码错误');
-    //     }
-    //   }
-    // })
+    });
+    wx.request({
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + options.username + "&timeStart=" + utils.getYearAndDate() +" 00:00:00&timeEnd="+utils.getYearAndDate()+" 23:59:59",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "GET",
+      complete: function (res) {
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        }
+        console.log('########查询订单数量和总价')
+        console.log(res);
+        // 查询
+        if (res.data) {
+          console.log('查询成功');
+          that.setData({
+            cases: res.data.data[0].cases,
+            money: res.data.data[0].total
+          })
+          
+        } else {
+          console.log('密码错误');
+        }
+      }
+    });
     console.log(options);
     var menu = "../menuManager/menuManager?username=" + options.username;
     var table = "../tableManager/tableManager?username=" + options.username;
