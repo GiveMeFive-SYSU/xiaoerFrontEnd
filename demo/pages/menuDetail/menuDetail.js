@@ -77,10 +77,12 @@ return count;
             console.error('网络请求失败');
             return;
           }
-          that.setData({foods:res.data[0].foods});
-          that.countfoods();
-          console.log(that.data.foods);
-          console.log("test");
+          console.log(res.data);
+          if (res.data[0] != null) {
+            that.setData({ foods: res.data[0].foods });
+            that.countfoods();
+            console.log(that.data.foods);
+          }
         }
       })
     }
