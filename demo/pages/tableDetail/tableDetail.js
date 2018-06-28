@@ -24,11 +24,13 @@ Page({
     })
   },
   download:function() {
+    console.log("Test");
     wx.downloadFile({
       url: this.data.imageUrl,
       success: function (res) {
         console.log(res);
-        var tempFilePaths = res.tempFilePath
+        var tempFilePaths = res.tempFilePath;
+        console.log(tempFilePaths);
         wx.saveFile({
           tempFilePath: tempFilePaths,
           success: function (res) {
@@ -39,6 +41,16 @@ Page({
               icon: 'success',
               duration: 2000,
               mask: true
+            })
+            wx.saveImageToPhotosAlbum({
+              filePath: savedFilePath,
+              success: function (res) {
+                console.log(res)
+              },
+              fail: function (res) {
+                console.log(res)
+                console.log('fail')
+              }
             })
           },
           fail: function (res) {
