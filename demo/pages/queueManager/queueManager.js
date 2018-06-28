@@ -73,12 +73,13 @@ Page({
     var that = this;
     // if (this.data.tables.length != 0) return;
     wx.request({
-      url: app.globalData.prefixUrl + '/api/v1/searchOrder?username=' + app.getOpenid(),
+      url: app.globalData.prefixUrl + '/api/v1/searchOrder/showUnfinishedOrder?username=' + app.getOpenid(),
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: 'GET',
       complete: function(res) {
+        console.log("#####排队管理")
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
