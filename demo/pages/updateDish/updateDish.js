@@ -44,6 +44,7 @@ Page({
       var that = this;
       if (this.data.dishicon != this.data.disholdicon) {
         console.log("Upload File");
+        console.log("更新菜品################")
         console.log(this.data.dishicon);
         wx.uploadFile({
           url: app.globalData.prefixUrl + '/api/v1/searchFood/updatefood',
