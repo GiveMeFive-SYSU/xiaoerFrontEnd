@@ -6,65 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tables: [
-      {
-        tableno: 1,
-        order: {
-          orderid: 1,
-          dishes: [
-            {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }, {
-              dishname: 'dishname1',
-              price: 10,
-              num: 5
-            }
-          ]
-        }
-      },
-      {
-        tableno: 2,
-        order: {
-          dishes: [
-            {
-              dishname: 'dishname2',
-              price: 9,
-              num: 3
-            }
-          ]
-        }
-      }
-    ],
+    tables: [],
   },
 
   /**
@@ -85,18 +27,25 @@ Page({
           console.error('网络请求失败');
           return;
         }
-        console.log(res);
+        console.log(res.data.data);
+        that.setData({
+          tables: res.data.data
+        })
+        console.log(that.data.tables)
       }
     });
   },
-  finishOrder: function(orderid) {
+  finishOrder: function(e) {
+    let orderid = e.currentTarget.dataset.ordernum;
+    var that = this;
     wx.request({
-      url: app.globalData.prefixUrl + '/api/v1/',
+      url: app.globalData.prefixUrl + '/api/v1/searchOrder/setFinished?username=' + app.getOpenid() + '&ordernum=' + orderid,
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: 'GET',
       complete: function (res) {
+        console.log(res);
         if (res == null || res.data == null) {
           console.log("网络连接失败");
           wx.showToast({
@@ -105,9 +54,9 @@ Page({
           })
           return;
         }
-        len = that.data.tables.length;
-        for (i = 0; i < len; i++) {
-          if (that.data.tables[i].order.orderid == orderid) {
+        let len = that.data.tables.length;
+        for (let i = 0; i < len; i++) {
+          if (that.data.tables[i].ordernum == orderid) {
             that.data.tables.splice(i, 1);
             break;
           }

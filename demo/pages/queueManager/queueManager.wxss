@@ -38,3 +38,7 @@ page {
   height: 30px;
   width: 100%;
 }
+
+.all-finish {
+  margin-left: 10%;
+}
