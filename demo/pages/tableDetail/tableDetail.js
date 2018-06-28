@@ -24,6 +24,7 @@ Page({
     })
   },
   download:function() {
+    console.log("TEST")
     wx.downloadFile({
       url: this.data.imageUrl,
       success: function (res) {
