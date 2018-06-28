@@ -10,6 +10,7 @@ Page({
       {
         tableno: 1,
         order: {
+          orderid: 1,
           dishes: [
             {
               dishname: 'dishname1',
@@ -88,7 +89,7 @@ Page({
       }
     });
   },
-  finishOrder: function() {
+  finishOrder: function(orderid) {
     wx.request({
       url: app.globalData.prefixUrl + '/api/v1/',
       header: {
@@ -96,7 +97,25 @@ Page({
       },
       method: 'GET',
       complete: function (res) {
-
+        if (res == null || res.data == null) {
+          console.log("网络连接失败");
+          wx.showToast({
+            title: "网络连接失败",
+            icon: "none"
+          })
+          return;
+        }
+        len = that.data.tables.length;
+        for (i = 0; i < len; i++) {
+          if (that.data.tables[i].order.orderid == orderid) {
+            that.data.tables.splice(i, 1);
+            break;
+          }
+        }
+        wx.showToast({
+          title: "订单完成",
+          icon: "success"
+        })
       }
     })
   }
