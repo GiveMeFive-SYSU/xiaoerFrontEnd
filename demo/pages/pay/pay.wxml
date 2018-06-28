@@ -11,7 +11,7 @@
     </view>
   </view>
   <view class="beizhu-view" style="height:80px;">
-    <textarea class="beizhu" placeholder="备注忌口..."/>
+    <textarea bindblur="bindTextAreaBlur" class="beizhu" placeholder="备注忌口..."/>
   </view>
   <view class="total" style="display:block">
     <button class="pay-button" catchtap="submitOrder">总价：￥{{total}}，确认支付</button>
