@@ -84,7 +84,7 @@ Page({
       } else {
         console.log("No picture");
         wx.request({
-          url: app.globalData.prefixUrl + '/api/v1/searchFood/updatefood',
+          url: app.globalData.prefixUrl + '/api/v1/searchFood/updatefoodnoimg',
           header: {
             "Content-Type": "application/x-www-form-urlencoded"
           },
