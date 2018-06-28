@@ -1,8 +1,0 @@
-<!--
-<view>
-  二维码扫描测试界面:
-  <view>商家：{{usename}}</view>
-  <view>餐桌号：{{tablenum}}</view>
-  即将进入下一个界面
-</view>
--->
