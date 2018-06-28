@@ -169,6 +169,11 @@ return count;
       complete: function (res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
+            wx.showToast({
+              title: '网络请求失败',
+              icon: 'success',
+              duration: 2000
+            })
             return;
           }
           console.log(res);
@@ -177,6 +182,11 @@ return count;
         }
       })
     }
+    wx.showToast({
+      title: '已确认更改',
+      icon: 'success',
+      duration: 2000
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏
