@@ -183,12 +183,12 @@ Page({
                   return;
                 }
                 console.log(res);
-                wx.navigateTo({
-                  url: '../customerMainPage/customerMainPage',
-                })
               }
             })
           }
+          wx.navigateTo({
+            url: '../start/start',
+          })
         }
       })
 
