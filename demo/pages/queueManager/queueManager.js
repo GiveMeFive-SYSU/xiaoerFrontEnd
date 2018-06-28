@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tables: [],
+    tables: []
   },
 
   /**
@@ -31,7 +31,6 @@ Page({
         that.setData({
           tables: res.data.data
         })
-        console.log(that.data.tables)
       }
     });
   },
@@ -57,7 +56,12 @@ Page({
         let len = that.data.tables.length;
         for (let i = 0; i < len; i++) {
           if (that.data.tables[i].ordernum == orderid) {
-            that.data.tables.splice(i, 1);
+            let newTable = that.data.tables;
+            newTable.splice(i, 1);
+            console.log(newTable);
+            that.setData({
+              tables: newTable
+            })
             break;
           }
         }
