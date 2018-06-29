@@ -50,10 +50,10 @@ Page({
     } else {
       curmonthnext = curmonthnext + this.dataArr[0][parseInt(timefactor[1]) - 1];
     }
-    var curmonth = curmonthprev +  '$' + curmonthnext;
+    var curmonth = curmonthprev + '$' + curmonthnext;
     var yearstart = timefactor[0] + '-' + '01-01';
     var yearend = timefactor[0] + '-12-31';
-    var curyear = timefactor[0] + '-' + '01-01' +  '$'+ timefactor[0] + '-12-31';
+    var curyear = timefactor[0] + '-' + '01-01' + '$' + timefactor[0] + '-12-31';
     this.querylist = [];
     this.querylist.push(curmonth);
     this.querylist.push(curyear);
@@ -64,7 +64,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
-      complete: function (res) {
+      complete: function(res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
@@ -92,7 +92,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
-      complete: function (res) {
+      complete: function(res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
@@ -138,7 +138,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
-      complete: function (res) {
+      complete: function(res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;

@@ -1,8 +1,10 @@
 /* pages/updatecard/updatecard.wxss */
-page{
+
+page {
   width: 100%;
 }
-.showCard{
+
+.showCard {
   border-radius: 8px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -11,27 +13,31 @@ page{
   left: 10%;
   width: 80%;
   text-align: center;
-  background: #EEEEEE;
+  background: #eee;
 }
-.change-button{
+
+.change-button {
   position: relative;
   top: 12px;
-  color: #FF9E01;
+  color: #ff9e01;
   font-size: 14px;
 }
-.newCard{
+
+.newCard {
   border-radius: 8px;
-  background: #EEEEEE;
+  background: #eee;
   position: relative;
-  top: 42px; 
+  top: 42px;
 }
-.num{
+
+.num {
   padding-bottom: 6px;
   margin-bottom: 6px;
   border-bottom: 1px solid black;
 }
-.submit{
+
+.submit {
   font-size: 14px;
-  color: #FF9E01;
+  color: #ff9e01;
   margin-top: 6px;
 }

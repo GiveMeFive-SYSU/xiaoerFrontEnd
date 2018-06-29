@@ -1,62 +1,69 @@
 /* tableManager.wxss */
-page{
+
+page {
   height: 100%;
-  
 }
-.table-list{
+
+.table-list {
   height: 70%;
 }
-.newest-list{
-    display: inline-block;
-    width: 120rpx;
-    height: 120rpx;
-    margin:14rpx;
-    border-radius: 50%;
-    text-align: center;
-    color: #FF9E01;
-    border:1px solid #FF9E01;
-}
-.newest-list:nth-child(5n){
-    margin-right: 0;
-}
-.navi{
+
+.newest-list {
   display: inline-block;
-    width: 120rpx;
-    height: 120rpx;
-    border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 14rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #ff9e01;
+  border: 1px solid #ff9e01;
 }
-.newest-list .newest-text{
-    font-size: 32rpx;
-    margin-top: 37rpx;
-    text-align: center;
+
+.newest-list:nth-child(5n) {
+  margin-right: 0;
 }
-.name-input{
+
+.navi {
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.newest-list .newest-text {
+  font-size: 32rpx;
+  margin-top: 37rpx;
+  text-align: center;
+}
+
+.name-input {
   display: inline-block;
   width: 400rpx;
 }
-.add-button{
+
+.add-button {
   border: none;
   display: inline-block;
-  width:200rpx;
+  width: 200rpx;
   font-size: 24rpx;
   position: absolute;
   left: 450rpx;
   color: white;
-  background: #FF9E01;
+  background: #ff9e01;
 }
 
-.add-table{
-  border: 1px solid #FF9E01;
+.add-table {
+  border: 1px solid #ff9e01;
   border-radius: 10px;
   font-size: 24rpx;
   position: absolute;
   left: 50rpx;
 }
 
-.submit-button{
+.submit-button {
   position: absolute;
   bottom: 13%;
-  background: #FF9E01;
+  background: #ff9e01;
   color: white;
   width: 50%;
   margin-left: 25%;

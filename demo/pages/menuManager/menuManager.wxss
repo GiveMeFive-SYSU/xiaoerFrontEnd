@@ -1,75 +1,83 @@
 /* menuManager.wxss */
-page{
+
+page {
   height: 100%;
   width: 100%;
-  background: #E6E6E6;
+  background: #e6e6e6;
 }
-.menu-item{
+
+.menu-item {
   height: 50px;
   font-size: 20px;
-  background:white;
+  background: white;
   position: relative;
   margin: 8px;
   border-radius: 10px;
   padding-left: 2px;
   padding-top: 15rpx;
 }
-.text{
-  color: #FF9E01;
+
+.text {
+  color: #ff9e01;
   padding-top: 3px;
   width: 400rpx;
   margin-top: 10rpx;
 }
-.buttonText{
-  color: #FF9E01;
+
+.buttonText {
+  color: #ff9e01;
   font-size: 20px;
 }
-.toTop{
+
+.toTop {
   position: absolute;
   right: 60px;
-  top:2px;
-  height : 25px;
-  width : 40px;
-  font-size: 12px;
-  margin-top: 20rpx;
-}
-.remove{
-  position: absolute;
-  right: 10px;
-  top:2px;
-  height : 25px;
-  width : 40px;
+  top: 2px;
+  height: 25px;
+  width: 40px;
   font-size: 12px;
   margin-top: 20rpx;
 }
 
-.bottom-add{
+.remove {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  height: 25px;
+  width: 40px;
+  font-size: 12px;
+  margin-top: 20rpx;
+}
+
+.bottom-add {
   background: white;
   font-size: 20px;
   height: 60px;
   margin-top: 10px;
 }
-.add-input{
+
+.add-input {
   position: absolute;
   left: 30rpx;
   margin-top: 30rpx;
-  width:400rpx;
+  width: 400rpx;
 }
-.add-button{
+
+.add-button {
   position: absolute;
   right: 10rpx;
   margin-top: 30rpx;
-  width:250rpx;
-  height : 25px;
-  color: #FF9E01;
+  width: 250rpx;
+  height: 25px;
+  color: #ff9e01;
 }
 
-.undo-or-submit-button{
-  margin-top:10px;
-  margin-bottom:10px;
+.undo-or-submit-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 90%;
   margin-left: 5%;
   color: white;
-  background: #FF9E01;
+  background: #ff9e01;
   font-size: 24px;
 }

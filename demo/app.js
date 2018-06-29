@@ -1,13 +1,13 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     var that = this;
     wx.login({
-      success: function (res) {
+      success: function(res) {
         //我的appid：wxb0295a71214e7ca7
         //我的secret:a020b2bc99aa544bb318f8248aab7ef4
         //var appid = 'wx0b3b9d62aac2598e'; //填写微信小程序appid  
@@ -19,7 +19,7 @@ App({
             header: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function (res) {
+            success: function(res) {
               console.log(res)
               that.globalData.openID = res.data.openid
               console.log(that.globalData.openID)
@@ -33,7 +33,7 @@ App({
     });
   },
 
-  getUserInfo: function (cb) {
+  getUserInfo: function(cb) {
     var that = this
     if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)
@@ -41,14 +41,14 @@ App({
       //调用登录接口
       wx.getUserInfo({
         withCredentials: false,
-        success: function (res) {
+        success: function(res) {
           that.globalData.userInfo = res.userInfo
           typeof cb == "function" && cb(that.globalData.userInfo)
         }
       })
     }
   },
-  getOpenid: function () {
+  getOpenid: function() {
     return this.globalData.openID;
   },
   globalData: {

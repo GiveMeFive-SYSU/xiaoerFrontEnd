@@ -10,6 +10,7 @@ function formatTime(date) {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+
 function formatTime2(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -22,6 +23,7 @@ function formatTime2(date) {
 
   return [year, month, day].map(formatNumber).join('_') + '_' + [hour, minute, second].map(formatNumber).join('_')
 }
+
 function getYearAndDate() {
   var date = new Date()
   var year = date.getFullYear()
@@ -35,6 +37,7 @@ function getYearAndDate() {
 
   return [year, month, day].map(formatNumber).join('/')
 }
+
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n

@@ -12,5 +12,5 @@
     <view class="note">备注: {{table.order.note}}</view>
     <button class="finish-btn" size="mini" type="primary" bindtap="finishOrder" data-ordernum="{{table.ordernum}}">完成</button>
   </view>
-   <view hidden="{{tables.length != 0}}" class="all-finish">所有订单已经完成</view> 
+  <view hidden="{{tables.length != 0}}" class="all-finish">所有订单已经完成</view>
 </view>

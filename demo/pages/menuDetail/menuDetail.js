@@ -6,59 +6,65 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
-      selectItem:[],
-      typename:null,
-      typenum:null,
-      foods:[],
-      foodslength:null,
-      username:''
+
+    selectItem: [],
+    typename: null,
+    typenum: null,
+    foods: [],
+    foodslength: null,
+    username: ''
   },
-  tempfoods:null,
-  delfoods:[],
-  strlist:[],
-  delimage:[],
-  selectDish:function(e) {
+  tempfoods: null,
+  delfoods: [],
+  strlist: [],
+  delimage: [],
+  selectDish: function(e) {
     console.log(e.currentTarget.dataset.itemIndex);
     console.log(this.data.selectItem);
   },
-  correctFunction:function(e) {
+  correctFunction: function(e) {
     console.log(e);
     wx.redirectTo({
-      url: '../updateDish/updateDish?typename=' + this.data.typename + "&username=" + this.data.username + '&no=' + this.data.typenum + "&dishname=" + this.data.foods[e.currentTarget.dataset.itemIndex].name + "&disholdprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].oldprice + "&dishprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].price + "&dishdescription=" + this.data.foods[e.currentTarget.dataset.itemIndex].description + "&dishimage=" + this.data.foods[e.currentTarget.dataset.itemIndex].icon ,
+      url: '../updateDish/updateDish?typename=' + this.data.typename + "&username=" + this.data.username + '&no=' + this.data.typenum + "&dishname=" + this.data.foods[e.currentTarget.dataset.itemIndex].name + "&disholdprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].oldprice + "&dishprice=" + this.data.foods[e.currentTarget.dataset.itemIndex].price + "&dishdescription=" + this.data.foods[e.currentTarget.dataset.itemIndex].description + "&dishimage=" + this.data.foods[e.currentTarget.dataset.itemIndex].icon,
     })
   },
-  addDish:function() {
+  addDish: function() {
     wx.redirectTo({
       url: '../addDish/addDish?typename=' + this.data.typename + '&no=' + this.data.typenum + '&username=' + this.data.username,
     })
   },
-  countfoods:function() {
+  countfoods: function() {
     var count = 0;
     for (var obj in this.data.foods) {
       count++;
     }
-    this.setData({foodslength:count});
+    this.setData({
+      foodslength: count
+    });
   },
-  countProperties:function (obj) {  
-    var count = 0;  
-    for(var property in obj) {  
-  if (Object.prototype.hasOwnProperty.call(obj, property)) {
-    count++;
-  }
-}
-return count;  
-},  
+  countProperties: function(obj) {
+    var count = 0;
+    for (var property in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, property)) {
+        count++;
+      }
+    }
+    return count;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: options.typename,
     })
     console.log(options);
     this.tempfoods = new Object();
-    this.setData({ typename: options.typename, typenum: options.no, username:options.username});
+    this.setData({
+      typename: options.typename,
+      typenum: options.no,
+      username: options.username
+    });
     for (var i = 0; i < 100; i++) this.data.selectItem[i] = false;
     if (this.data.foods.length == 0) {
       var that = this;
@@ -72,14 +78,16 @@ return count;
           username: that.data.username,
           dishtypename: options.typename
         },
-        complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             return;
           }
           console.log(res.data);
           if (res.data[0] != null) {
-            that.setData({ foods: res.data[0].foods });
+            that.setData({
+              foods: res.data[0].foods
+            });
             that.countfoods();
             console.log(that.data.foods);
           }
@@ -91,17 +99,17 @@ return count;
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
-  removeFunction:function(e) {
+  removeFunction: function(e) {
     for (var i = 0; i < this.data.foodslength; ++i) {
       this.tempfoods[i] = new Object();
       for (var pro in this.data.foods[i]) {
@@ -121,10 +129,12 @@ return count;
         break;
       }
     }
-    this.setData({ foods: this.tempfoods });
+    this.setData({
+      foods: this.tempfoods
+    });
     this.countfoods();
   },
-  Undo:function() {
+  Undo: function() {
     if (this.strlist.length != 0) {
       var changenum = this.strlist[this.strlist.length - 1][1];
       for (var i = 0; i < this.data.foodslength; ++i) {
@@ -144,11 +154,13 @@ return count;
       }
       this.delfoods.length -= 1;
       this.strlist.length -= 1;
-      this.setData({ foods: this.tempfoods});
+      this.setData({
+        foods: this.tempfoods
+      });
       this.countfoods();
     }
   },
-  Submit:function() {
+  Submit: function() {
     console.log(this.delfoods);
     var that = this;
     if (this.strlist.length != 0) {
@@ -165,10 +177,10 @@ return count;
         data: {
           username: that.data.username,
           deletelist: that.delfoods,
-          delimage:that.delimage,
+          delimage: that.delimage,
           typenum: that.data.typenum
         },
-      complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             wx.showToast({
@@ -193,35 +205,35 @@ return count;
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   }
 })

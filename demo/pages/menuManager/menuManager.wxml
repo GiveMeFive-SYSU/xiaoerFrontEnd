@@ -13,11 +13,13 @@
       </view>
     </view>
     <view class="bottom-add">
-      <input class="add-input"   bindinput="dishtypeInput" placeholder="输入菜系名字"></input>
-      <view class="add-button" catchtap="addFunction"><text class="buttonText">添加新菜系</text></view>
+      <input class="add-input" bindinput="dishtypeInput" placeholder="输入菜系名字"></input>
+      <view class="add-button" catchtap="addFunction">
+        <text class="buttonText">添加新菜系</text>
+      </view>
     </view>
-     <!-- <button class="undo-or-submit-button" bindtap="Undo"> 撤销更改 </button> -->
-    <button class="undo-or-submit-button" bindtap="Submit"> 确认更改 </button> 
+    <!-- <button class="undo-or-submit-button" bindtap="Undo"> 撤销更改 </button> -->
+    <button class="undo-or-submit-button" bindtap="Submit"> 确认更改 </button>
   </scroll-view>
-<toast duration="2000" hidden="{{toastHidden}}" bindchange="toastBindChange">{{message}}</toast> 
+  <toast duration="2000" hidden="{{toastHidden}}" bindchange="toastBindChange">{{message}}</toast>
 </view>

@@ -1,22 +1,22 @@
 <!--businessRegister.wxml-->
 <view class="all">
-        <view class="warn" wx:if="{{showTopTips}}">{{wrongMessage}}</view>
-        <view class="icon-view">
-          <image class="icon" src="/images/seller.png"></image>
+  <view class="warn" wx:if="{{showTopTips}}">{{wrongMessage}}</view>
+  <view class="icon-view">
+    <image class="icon" src="/images/seller.png"></image>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="regis-form">
+      <view class="item-view">
+        <view class="input-title">
+          <view class="weui-label">店铺名称</view>
         </view>
-        <form bindsubmit="formSubmit" bindreset="formReset">  
-        <view class="regis-form">
-            <view class="item-view">
-                <view class="input-title">
-                    <view class="weui-label">店铺名称</view>
-                </view>
-            </view>
-            <view class="item-view">
-                <view class="input-view">
-                    <input class="weui-input" bindfocus="tipsOut" placeholder="请输入店铺名称" name='restaurantName'/>
-                </view>
-            </view>
-            <!-- <view class="item-view">
+      </view>
+      <view class="item-view">
+        <view class="input-view">
+          <input class="weui-input" bindfocus="tipsOut" placeholder="请输入店铺名称" name='restaurantName' />
+        </view>
+      </view>
+      <!-- <view class="item-view">
                 <view class="input-title">
                     <view class="weui-label">店主姓名</view>
                 </view>
@@ -26,23 +26,24 @@
                     <input class="weui-input" bindfocus="tipsOut" placeholder="请输入店主姓名" name='busiName'/>
                 </view>
             </view> -->
-            <view class="item-view">
-                <view class="input-title">
-                    <view class="weui-label">手机号</view>
-                </view>
-            </view>
-            <view class="item-view">
-                <view class="input-view">
-                    <input class="weui-input" bindfocus="tipsOut" placeholder="请输入手机号" name="phone"/></view>
-                <!--
+      <view class="item-view">
+        <view class="input-title">
+          <view class="weui-label">手机号</view>
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="input-view">
+          <input class="weui-input" bindfocus="tipsOut" placeholder="请输入手机号" name="phone" />
+        </view>
+        <!--
                 <view class="input-view-phone">
                     <input class="weui-input" bindfocus="tipsOut" placeholder="请输入手机号" name='phone'/>
                 </view>
                 <view>
                     <view class="yanzhengma">获取验证码</view>
                 </view>-->
-            </view>
-            <!--
+      </view>
+      <!--
             <view class="item-view">
                 <view class="input-title">
                     <view class="weui-label">验证码</view>
@@ -51,37 +52,37 @@
                     <input class="weui-input" bindfocus="tipsOut" placeholder="请输入验证码" />
                 </view> 
             </view>-->
-            <view class="item-view">
-                <view class="input-title">
-                    <view class="weui-label">密码</view>
-                </view>
-            </view>
-            <view class="item-view">
-                <view class="input-view">
-                    <input class="weui-input" bindfocus="tipsOut" placeholder="长度大于6位" password="true" name="password"/>
-                </view> 
-            </view>
-            <view class="item-view">
-                <view class="input-title">
-                    <view class="weui-label">卡号</view>
-                </view>
-            </view>
-            <view class="item-view">
-                <view class="input-view">
-                    <input class="weui-input" bindfocus="createSpace" placeholder="请输入卡号" name='creditNo' />
-                </view> 
-            </view>
-            <view class="item-view">
-                <view class="input-title">
-                    <view class="weui-label">持卡人姓名</view>
-                </view>
-            </view>
-            <view class="item-view">
-                <view class="input-view">
-                   <input class="weui-input" bindfocus="tipsOut" placeholder="请输入持卡人姓名" name='managerName'/>
-                </view> 
-            </view>
-            <!--
+      <view class="item-view">
+        <view class="input-title">
+          <view class="weui-label">密码</view>
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="input-view">
+          <input class="weui-input" bindfocus="tipsOut" placeholder="长度大于6位" password="true" name="password" />
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="input-title">
+          <view class="weui-label">卡号</view>
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="input-view">
+          <input class="weui-input" bindfocus="createSpace" placeholder="请输入卡号" name='creditNo' />
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="input-title">
+          <view class="weui-label">持卡人姓名</view>
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="input-view">
+          <input class="weui-input" bindfocus="tipsOut" placeholder="请输入持卡人姓名" name='managerName' />
+        </view>
+      </view>
+      <!--
             <view class="item-view">
               <view class="input-title">
                     <view class="weui-label">卡号</view>
@@ -98,10 +99,9 @@
                     <input class="weui-input" bindfocus="tipsOut" placeholder="请输入持卡人姓名" name='managerName'/>
                 </view>
             </view>-->
-        </view>
-        <view class="bottom-button" formType="submit">
-            <button class="submit-button" formType="submit">确认</button>
-        </view>
-      </form>
+    </view>
+    <view class="bottom-button" formType="submit">
+      <button class="submit-button" formType="submit">确认</button>
+    </view>
+  </form>
 </view>
-

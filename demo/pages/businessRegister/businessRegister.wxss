@@ -1,14 +1,17 @@
 /* businessRegister.wxss */
-page{
+
+page {
   height: 100%;
   width: 100%;
 }
-.all{
+
+.all {
   height: 100%;
   width: 100%;
-  background: #EFEFEF;
+  background: #efefef;
 }
-.icon-view{
+
+.icon-view {
   height: 120px;
   width: 120px;
   border-radius: 50%;
@@ -18,36 +21,40 @@ page{
   left: 240rpx;
   background: white;
 }
-.icon{
+
+.icon {
   width: 100%;
   height: 100%;
 }
 
-.regis-form{
+.regis-form {
   position: absolute;
-  top:170px;
+  top: 170px;
   left: 5%;
   width: 90%;
 }
-.item-view{
+
+.item-view {
   margin-top: 6px;
   margin-bottom: 6px;
   display: flex;
   flex-direction: row;
 }
-.input-title{
-  width:30%;
+
+.input-title {
+  width: 30%;
   font-size: 15pt;
   font-weight: bold;
 }
 
-.input-view{
+.input-view {
   padding: 2px;
   background: white;
   border-radius: 8px;
   width: 100%;
 }
-.input-view-phone{
+
+.input-view-phone {
   padding: 2px;
   border-radius: 8px;
   width: 38%;
@@ -55,27 +62,26 @@ page{
   margin-right: 2%;
 }
 
-.bottom-button{
+.bottom-button {
   position: fixed;
   bottom: 0px;
   width: 100%;
 }
 
-.submit-button{
+.submit-button {
   width: 100%;
-  background: #FF9E01;
-  color:white;
+  background: #ff9e01;
+  color: white;
 }
 
-.weui-input{
+.weui-input {
   font-family: Microsoft YaHei;
 }
 
-.yanzhengma{
-  color: #FF9E01;
+.yanzhengma {
+  color: #ff9e01;
 }
 
-.warn{
+.warn {
   color: red;
 }
-

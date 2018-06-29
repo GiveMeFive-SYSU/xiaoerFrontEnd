@@ -1,37 +1,39 @@
-page{
-  background: #EFEFEF;
+page {
+  background: #efefef;
   height: 100%;
   width: 100%;
 }
-.busi-start{
+
+.busi-start {
   bottom: 55%;
   background: white;
-  width:280rpx;
+  width: 280rpx;
   height: 280rpx;
   border-radius: 50%;
   border: 5px solid white;
   position: absolute;
   left: 250rpx;
 }
-.cust-start{
-  top:55%;
-  background: #FF9E01;
+
+.cust-start {
+  top: 55%;
+  background: #ff9e01;
   position: absolute;
   left: 250rpx;
-  width:280rpx;
+  width: 280rpx;
   height: 280rpx;
   border-radius: 50%;
-  border: 5px solid #FF9E01;
+  border: 5px solid #ff9e01;
 }
 
-.img{
+.img {
   width: 80%;
   height: 80%;
   position: absolute;
   left: 10%;
 }
 
-.txt{
+.txt {
   position: absolute;
   bottom: 20rpx;
   left: 65rpx;
