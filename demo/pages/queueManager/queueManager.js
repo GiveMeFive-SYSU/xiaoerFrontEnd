@@ -6,7 +6,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tables: []
+    tables: [
+      {
+        tableno: 1,
+        order: {
+          ordernum: 1,
+          dishes: [
+            {
+              dishname: "菜品1",
+              num: 5,
+              price: 19
+            }
+          ],
+          note: "不要辣的"
+        }
+      }
+    ]
   },
 
   /**
