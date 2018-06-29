@@ -1,4 +1,4 @@
-// pages/payManager/payManager.js
+// payManager.js
 var app = getApp();
 Page({
   /**

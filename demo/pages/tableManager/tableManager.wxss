@@ -1,4 +1,4 @@
-/* tableManager.wxss */
+/* pages/tableManager/tableManager.wxss */
 
 page {
   height: 100%;

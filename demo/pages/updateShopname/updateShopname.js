@@ -1,4 +1,4 @@
-// changeCreditCard.js
+// updateShopname.js
 var app = getApp()
 Page({
 

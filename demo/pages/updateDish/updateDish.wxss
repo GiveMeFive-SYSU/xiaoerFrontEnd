@@ -1,4 +1,4 @@
-/* addDish.wxss */
+/* pages/updateDish/updateDish.wxss */
 
 .dish-container {
   font-size: 14px;

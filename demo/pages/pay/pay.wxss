@@ -1,3 +1,5 @@
+/* pages/pay/pay.wxss */
+
 page {
   height: 100%;
 }

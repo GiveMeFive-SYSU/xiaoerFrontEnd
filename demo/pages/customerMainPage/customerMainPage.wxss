@@ -1,4 +1,4 @@
-/* customerMainPage.wxss */
+/* pages/customerMainPage/customerMainPage.wxss */
 
 .img {
   height: 29px;

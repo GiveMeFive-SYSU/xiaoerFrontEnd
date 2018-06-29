@@ -1,3 +1,4 @@
+// start.js
 var app = getApp();
 Page({
   data: {

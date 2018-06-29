@@ -1,4 +1,4 @@
-/* businessRegister.wxss */
+/* pages/businessRegister/businessRegister.wxss */
 
 page {
   height: 100%;

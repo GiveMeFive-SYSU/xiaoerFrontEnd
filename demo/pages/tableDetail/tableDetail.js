@@ -1,3 +1,4 @@
+// tableDetail.js
 var app = getApp();
 Page({
 

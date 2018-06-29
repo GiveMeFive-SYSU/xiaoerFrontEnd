@@ -1,4 +1,4 @@
-// addDish.js
+// udpateDish.js
 var app = getApp();
 Page({
 

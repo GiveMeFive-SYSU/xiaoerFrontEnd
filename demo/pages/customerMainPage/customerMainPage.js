@@ -1,3 +1,4 @@
+// customerMainPage.js
 var app = getApp();
 var utils = require('../../utils/util.js')
 Page({

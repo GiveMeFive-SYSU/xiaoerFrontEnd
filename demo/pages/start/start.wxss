@@ -1,3 +1,5 @@
+/* pages/start/start.wxss */
+
 page {
   background: #efefef;
   height: 100%;

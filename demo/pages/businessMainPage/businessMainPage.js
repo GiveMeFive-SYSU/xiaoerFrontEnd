@@ -1,4 +1,4 @@
-// page/component/new-pages/user/user.js
+// businessMainPage.js
 var app = getApp();
 var utils = require("../../utils/util.js")
 Page({

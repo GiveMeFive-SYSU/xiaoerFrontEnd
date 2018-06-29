@@ -1,3 +1,4 @@
+// businessRegister.js
 var app = getApp()
 Page({
 

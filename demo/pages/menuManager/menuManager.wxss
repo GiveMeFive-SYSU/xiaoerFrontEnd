@@ -1,4 +1,4 @@
-/* menuManager.wxss */
+/* pages/menuManager/menuManager.wxss */
 
 page {
   height: 100%;

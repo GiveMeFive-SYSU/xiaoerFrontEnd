@@ -1,4 +1,4 @@
-// pages/businessLogin/businessLogin.js
+// businessLogin.js
 var app = getApp();
 Page({
 

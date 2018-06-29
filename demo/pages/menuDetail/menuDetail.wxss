@@ -1,4 +1,4 @@
-/* menuDetail.wxss */
+/* pages/menuDetail/menuDetail.wxss */
 
 page {
   height: 100%;

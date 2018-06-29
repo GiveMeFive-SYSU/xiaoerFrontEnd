@@ -1,4 +1,4 @@
-// menuManager.js
+// queueManager.js
 var app = getApp();
 Page({
 
