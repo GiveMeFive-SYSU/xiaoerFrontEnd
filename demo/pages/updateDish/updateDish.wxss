@@ -1,68 +1,80 @@
-/* addDish.wxss */
-.dish-container{
+/* pages/updateDish/updateDish.wxss */
+
+.dish-container {
   font-size: 14px;
-  
 }
-.dishName{
-  border-bottom: 2px outset #FF9E01;
+
+.dishName {
+  border-bottom: 2px outset #ff9e01;
   position: relative;
   margin: 15rpx;
 }
-.disholdPrice{
+
+.disholdPrice {
   position: relative;
   margin: 15rpx;
-  border-bottom: 2px outset #FF9E01;
+  border-bottom: 2px outset #ff9e01;
 }
-.dishPrice{
+
+.dishPrice {
   position: relative;
   margin: 15rpx;
-  border-bottom: 2px outset #FF9E01;
+  border-bottom: 2px outset #ff9e01;
 }
-.dish-input{
-  top:0px;
+
+.dish-input {
+  top: 0px;
   position: absolute;
   right: 20rpx;
   width: 600rpx;
 }
-.dishDescription{
+
+.dishDescription {
   padding: 25rpx;
   margin: 15rpx;
-  box-shadow:3rpx 3rpx 3rpx 3rpx #FF9E01 inset;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #ff9e01 inset;
 }
-.descrip-input{
+
+.descrip-input {
   height: 200rpx;
   width: 100%;
 }
-.dishDiscount{
+
+.dishDiscount {
   margin: 15rpx;
   border: 1px dotted olivedrab;
   border-radius: 10px;
   padding: 5px;
 }
-.dishPicture{
+
+.dishPicture {
   margin: 15rpx;
 }
-.image-container{
+
+.image-container {
   border: 1px dotted black;
   position: relative;
   width: 200rpx;
   height: 200rpx;
 }
-.dish-image{
+
+.dish-image {
   position: absolute;
   top: 0px;
   left: 0px;
-  width:200rpx;
-  height:200rpx;
+  width: 200rpx;
+  height: 200rpx;
 }
-.title{
-  width:100rpx;
+
+.title {
+  width: 100rpx;
 }
-.submit-button{
+
+.submit-button {
   position: fixed;
   bottom: 20px;
   left: 25%;
   width: 50%;
-  background: #FF9E01;
+  background: #ff9e01;
   color: white;
 }

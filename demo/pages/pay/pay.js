@@ -12,22 +12,22 @@ Page({
     total: 0,
     businessId: "",
     Ordernumber: "",
-    Ordertime:"",
-    Tablenumber:"",
-    Tastenote:"",
-    Orderdetail:{}
+    Ordertime: "",
+    Tablenumber: "",
+    Tastenote: "",
+    Orderdetail: {}
   },
 
-  bindTextAreaBlur: function (e) {
+  bindTextAreaBlur: function(e) {
     this.setData({
       Tastenote: e.detail.value
     })
-  }, 
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     //将字符串转换成对象
     console.log("PAY test")
     console.log(options);
@@ -36,21 +36,21 @@ Page({
     this.data.Tablenumber = options.tablenum;
     this.data.Ordertime = options.paytime;
 
-//this.data.bill = options.bill;
-//console.log(this.data.bill);
-    
+    //this.data.bill = options.bill;
+    //console.log(this.data.bill);
+
     this.setData({
       bill: JSON.parse(options.bill)
     });
 
     console.log("lala");
     console.log(this.data);
-    
+
     var j = 0;
     var temp_order = [];
     for (var i = 0; i < this.data.bill.length; i++) {
-      var perorderdetail =[]
-      var t = this.data.bill[i].price*this.data.bill[i].num;
+      var perorderdetail = []
+      var t = this.data.bill[i].price * this.data.bill[i].num;
       j += t;
       perorderdetail['dishname'] = this.data.bill[i].name;
       perorderdetail['dishcount'] = this.data.bill[i].num;
@@ -58,10 +58,10 @@ Page({
       temp_order.push(perorderdetail);
     }
     this.setData({
-      total:j,
+      total: j,
       Orderdetail: temp_order
     })
-   // for (var i = 0; i < this.data.bill.length; i++) this.data.text += this.data.bill[i].name + '\n';
+    // for (var i = 0; i < this.data.bill.length; i++) this.data.text += this.data.bill[i].name + '\n';
   },
   submitOrder: function() {
     console.log("提交订单");
@@ -89,7 +89,7 @@ Page({
         Tastenote: that.data.Tastenote,
         Price: that.data.total,
       },
-      complete: function (res) {
+      complete: function(res) {
         console.log("增加订单成功");
         wx.showToast({
           title: '支付成功',
@@ -110,7 +110,7 @@ Page({
         Ordernumber: that.data.Ordernumber,
         Orderlen: that.data.bill.length
       },
-      complete: function (res) {
+      complete: function(res) {
         console.log("增加订单详情成功");
       }
     })
@@ -119,48 +119,46 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   }
 })
 /*wx.request({

@@ -1,4 +1,4 @@
-// menuManager.js
+// queueManager.js
 var app = getApp();
 Page({
 
@@ -6,13 +6,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tables: []
+    tables: [{
+      tableno: 1,
+      order: {
+        ordernum: 1,
+        dishes: [{
+          dishname: "菜品1",
+          num: 5,
+          price: 19
+        }],
+        note: "不要辣的"
+      }
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     // if (this.data.tables.length != 0) return;
     wx.request({
@@ -44,7 +55,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: 'GET',
-      complete: function (res) {
+      complete: function(res) {
         console.log(res);
         if (res == null || res.data == null) {
           console.log("网络连接失败");

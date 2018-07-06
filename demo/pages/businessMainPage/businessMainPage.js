@@ -1,24 +1,24 @@
-// page/component/new-pages/user/user.js
+// businessMainPage.js
 var app = getApp();
 var utils = require("../../utils/util.js")
 Page({
   data: {
     thumb: '',
     nickname: '',
-    name:'杨小贤',
-    cases:0,
-    money:0,
-    menusetting:null,
-    tablesetting:null,
-    paysetting:null,
-    shopnamesetting:null,
-    userInfo:[]
+    name: '杨小贤',
+    cases: 0,
+    money: 0,
+    menusetting: null,
+    tablesetting: null,
+    paysetting: null,
+    shopnamesetting: null,
+    userInfo: []
   },
   onLoad(options) {
     var self = this;
     var that = this;
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
+    app.getUserInfo(function(userInfo) {
       //更新数据
       that.setData({
         userInfo: userInfo
@@ -30,7 +30,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
-      complete: function (res) {
+      complete: function(res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
@@ -49,12 +49,12 @@ Page({
       }
     });
     wx.request({
-      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + options.username + "&timeStart=" + utils.getYearAndDate() +" 00:00:00&timeEnd="+utils.getYearAndDate()+" 23:59:59",
+      url: app.globalData.prefixUrl + "/api/v1/searchOrder/queryOrderByTime?username=" + options.username + "&timeStart=" + utils.getYearAndDate() + " 00:00:00&timeEnd=" + utils.getYearAndDate() + " 23:59:59",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
-      complete: function (res) {
+      complete: function(res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
@@ -91,6 +91,6 @@ Page({
       queuesetting: queue
     });
   }
- 
-  
+
+
 })

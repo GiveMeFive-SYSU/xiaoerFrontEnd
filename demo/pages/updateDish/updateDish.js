@@ -1,4 +1,4 @@
-// addDish.js
+// udpateDish.js
 var app = getApp();
 Page({
 
@@ -8,25 +8,25 @@ Page({
   data: {
     showTopTips: false,
     wrongMessage: '',
-    dishname:null,
+    dishname: null,
     typename: null,
     typenum: null,
-    dishprice:null,
-    disholdprice:null,
-    dishicon:null,
-    disholdicon:null,
-    description:null,
-    username:'',
+    dishprice: null,
+    disholdprice: null,
+    dishicon: null,
+    disholdicon: null,
+    description: null,
+    username: '',
   },
 
-  bindTextAreaBlur: function (e) {
+  bindTextAreaBlur: function(e) {
     this.setData({
       description: e.detail.value
     })
     console.log('new text = ' + e.detail.value);
-  }, 
+  },
 
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     console.log(e);
     var temp = false;
     var that = this;
@@ -68,7 +68,7 @@ Page({
             dishdescription: that.data.description,
             key: "1430ec127e097e1113259c5e1be1ba70"
           },
-          success: function (res) {
+          success: function(res) {
             console.log("Success");
             var data = res.data;
             console.log(res.data);
@@ -100,7 +100,7 @@ Page({
             dishdescription: that.data.description,
             key: "1430ec127e097e1113259c5e1be1ba70"
           },
-          complete: function (res) {
+          complete: function(res) {
             if (res == null || res.data == null) {
               console.error('网络请求失败');
               return;
@@ -115,13 +115,15 @@ Page({
 
   },
   //点击上传图片的图标
-  clickToChoose: function () {
+  clickToChoose: function() {
     var that = this;
     wx.chooseImage({
       count: 1,
-      success: function (res) {
+      success: function(res) {
         var tempFilePaths = res.tempFilePaths[0];
-        that.setData({ dishicon: tempFilePaths });
+        that.setData({
+          dishicon: tempFilePaths
+        });
       }
     })
   },
@@ -129,7 +131,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log("修改菜品")
     console.log(options);
     this.setData({
@@ -140,7 +142,7 @@ Page({
       dishprice: options.dishprice,
       disholdprice: options.disholdprice,
       dishicon: options.dishimage,
-      disholdicon:  options.dishimage,
+      disholdicon: options.dishimage,
       description: options.dishdescription
     });
   },
@@ -148,52 +150,52 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  tipsOut: function (e) {
+  tipsOut: function(e) {
     this.setData({
       showTopTips: false
     })

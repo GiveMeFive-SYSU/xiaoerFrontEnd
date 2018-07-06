@@ -2,7 +2,7 @@
 <view class="ruzhu">
   <view bindtap="toBusi">
     <image class="img" src="/images/seller.png"></image>
-    <view class="ruzhu-text">商家免费入驻</view> 
+    <view class="ruzhu-text">商家免费入驻</view>
   </view>
 </view>
 <view class="goods">
@@ -73,11 +73,11 @@
             <view class="title">购物车</view>
             <text class="empty" bindtap="empty">清空</text>
           </view>
-          <scroll-view scroll-y = "true" class="list-content">
+          <scroll-view scroll-y="true" class="list-content">
             <view class="shopcart-food" wx:for="{{carArray}}">
               <text class="name">{{item.name}}</text>
-              <view class="price" >
-                <span>￥{{item.price*item.num}}</span> 
+              <view class="price">
+                <span>￥{{item.price*item.num}}</span>
               </view>
 
               <!--cartControl-->

@@ -1,3 +1,4 @@
+// customerMainPage.js
 var app = getApp();
 var utils = require('../../utils/util.js')
 Page({
@@ -6,17 +7,20 @@ Page({
     toView: '0',
     scrollTop: 100,
     foodCounts: 0,
-    totalPrice: 0,// 总价格
+    totalPrice: 0, // 总价格
     totalCount: 0, // 总商品数
     carArray: [],
     fold: true,
-    tablenum:"",
-    selectFoods: [{ price: 20, count: 2 }],
+    tablenum: "",
+    selectFoods: [{
+      price: 20,
+      count: 2
+    }],
     cartShow: 'none',
     businessId: 0,
     shopname: ""
   },
-  selectMenu: function (e) {
+  selectMenu: function(e) {
     var index = e.currentTarget.dataset.itemIndex;
     this.setData({
       toView: 'order' + index.toString()
@@ -24,7 +28,7 @@ Page({
     console.log(this.data.toView);
   },
   //移除商品
-  decreaseCart: function (e) {
+  decreaseCart: function(e) {
     var index = e.currentTarget.dataset.itemIndex;
     var parentIndex = e.currentTarget.dataset.parentindex;
     this.data.goods[parentIndex].foods[index].num--;
@@ -38,16 +42,24 @@ Page({
         carArray: carArray1,
         goods: this.data.goods
       })
-      else {
-      var obj = { price: price, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
+    else {
+      var obj = {
+        price: price,
+        num: num,
+        mark: mark,
+        name: name,
+        index: index,
+        parentIndex: parentIndex
+      };
       carArray1.push(obj);
       this.setData({
         carArray: carArray1,
-        goods: this.data.goods})
-      }
+        goods: this.data.goods
+      })
+    }
     this.calTotalPrice()
   },
-  decreaseShopCart: function (e) {
+  decreaseShopCart: function(e) {
     this.decreaseCart(e);
   },
   //添加到购物车
@@ -61,7 +73,14 @@ Page({
     var price = this.data.goods[parentIndex].foods[index].price;
     var num = this.data.goods[parentIndex].foods[index].num;
     var name = this.data.goods[parentIndex].foods[index].name;
-    var obj = { price: price, num: num, mark: mark, name: name, index: index, parentIndex: parentIndex };
+    var obj = {
+      price: price,
+      num: num,
+      mark: mark,
+      name: name,
+      index: index,
+      parentIndex: parentIndex
+    };
     var carArray1 = this.data.carArray.filter(item => item.mark != mark)
     carArray1.push(obj)
     console.log(carArray1);
@@ -71,33 +90,33 @@ Page({
     })
     this.calTotalPrice();
   },
-  addShopCart: function (e) {
+  addShopCart: function(e) {
     this.addCart(e);
   },
-  empty:function() {
+  empty: function() {
     this.setData({
-      carArray:[],
+      carArray: [],
       fold: !this.data.fold
     })
-    
+
     this.calTotalPrice();
     var goodslen = this.data.goods.length;
-    for (var i = 0;i < goodslen; i++) {
+    for (var i = 0; i < goodslen; i++) {
       var foodslen = this.data.goods[i].foods.length;
       for (var j = 0; j < foodslen; j++) {
-          if (this.data.goods[i].foods[j].Count > 0) {
-            this.data.goods[i].foods[j].Count =0
-            this.setData({
-              goods:this.data.goods
-            })
-          }
+        if (this.data.goods[i].foods[j].Count > 0) {
+          this.data.goods[i].foods[j].Count = 0
+          this.setData({
+            goods: this.data.goods
+          })
         }
+      }
     }
     var fold = this.data.fold
     this.cartShow(fold)
   },
   //计算总价
-  calTotalPrice: function () {
+  calTotalPrice: function() {
     var carArray = this.data.carArray;
     var totalPrice = 0;
     var totalCount = 0;
@@ -120,14 +139,14 @@ Page({
     var dt = new Date();
     var payTime = utils.formatTime(dt);
     var ordernum = this.data.businessId + this.data.tablenum + utils.formatTime2(dt)
-    ordernum = 
-    wx.navigateTo({
-      url: '../pay/pay?bill=' + JSON.stringify(this.data.carArray) + '&' +'businessId='
-      + this.data.businessId + '&' + 'ordernum=' + ordernum + '&' + 'paytime='+payTime+'&' +'tablenum=' + this.data.tablenum
-    })
+    ordernum =
+      wx.navigateTo({
+        url: '../pay/pay?bill=' + JSON.stringify(this.data.carArray) + '&' + 'businessId=' +
+          this.data.businessId + '&' + 'ordernum=' + ordernum + '&' + 'paytime=' + payTime + '&' + 'tablenum=' + this.data.tablenum
+      })
   },
   //彈起購物車
-  toggleList: function () {
+  toggleList: function() {
     if (!this.data.totalCount) {
       return;
     }
@@ -137,7 +156,7 @@ Page({
     var fold = this.data.fold
     this.cartShow(fold)
   },
-  cartShow: function (fold) {
+  cartShow: function(fold) {
     console.log(fold);
     if (fold == false) {
       this.setData({
@@ -169,10 +188,10 @@ Page({
     // }
     return show;
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.setData({
-      businessId:options.username,
+      businessId: options.username,
       tablenum: options.tablenum
     })
     if (this.data.goods.length == 0) {
@@ -183,13 +202,15 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         method: "GET",
-        complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             return;
           }
           console.log(res.data);
-          that.setData({ goods: res.data });
+          that.setData({
+            goods: res.data
+          });
         }
       })
       wx.request({
@@ -198,14 +219,16 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         method: "GET",
-        complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             return;
           }
           console.log("test shopname");
           console.log(res.data);
-          that.setData({ shopname: res.data });
+          that.setData({
+            shopname: res.data
+          });
           wx.setNavigationBarTitle({
             title: res.data.shopname,
           })
@@ -214,26 +237,24 @@ Page({
 
     }
   },
-  toBusi:function() {
+  toBusi: function() {
     wx.navigateTo({
       url: '../businessRegister/businessRegister',
     })
-  }
-  ,
-  onReady: function () {
+  },
+  onReady: function() {
     // 页面渲染完成
     console.log(this.data.businessId);
 
   },
-  onShow: function () {
+  onShow: function() {
     // 页面显示
   },
-  onHide: function () {
+  onHide: function() {
     // 页面隐藏
     console.log(this.data.carArray[0]);
   },
-  onUnload: function () {
+  onUnload: function() {
     // 页面关闭
   }
-}
-)
+})

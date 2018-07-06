@@ -1,8 +1,9 @@
 /* pages/queueManager/queueManager.wxss */
+
 page {
   height: 100%;
   width: 100%;
-  background: #E6E6E6;
+  background: #e6e6e6;
 }
 
 .cards-view {
@@ -11,13 +12,13 @@ page {
 
 .card {
   margin-top: 5%;
-  height: 165px;
+  height: 192px;
   width: 95%;
   border: 1px solid black;
 }
 
 .dish-card {
-  margin-top: 10px;
+  margin-top: 15px;
   height: 100px;
   width: 90%;
 }
@@ -30,7 +31,14 @@ page {
 }
 
 .dish-info {
-  margin-left: 15%;
+  margin-left: 20%;
+}
+
+.note {
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 17px;
+  font-size: 16px;
 }
 
 .finish-btn {

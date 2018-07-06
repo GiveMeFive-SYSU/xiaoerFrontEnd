@@ -1,36 +1,39 @@
-/* customerMainPage.wxss */
-.img{
+/* pages/customerMainPage/customerMainPage.wxss */
+
+.img {
   height: 29px;
   width: 29px;
   position: absolute;
   right: 60%;
 }
-.ruzhu-text{
-  color: #FF9D01;
+
+.ruzhu-text {
+  color: #ff9d01;
   font-size: 14px;
   position: absolute;
   top: 10px;
   left: 40%;
 }
 
-.ruzhu-button{
+.ruzhu-button {
   position: absolute;
   top: 3px;
   left: 34px;
   height: 29px;
-  background: #FF9D01;
+  background: #ff9d01;
   color: white;
   font-size: 12px;
 }
 
-.ruzhu{
+.ruzhu {
   margin: 3px;
   height: 29px;
 }
+
 .goods {
   display: flex;
   position: absolute;
-  width:100%;
+  width: 100%;
   top: 36px;
   bottom: 46px;
   overflow: hidden;
@@ -78,7 +81,7 @@
   vertical-align: middle;
   position: relative;
   font-size: 12px;
-  border-bottom:1px solid rgba(7,17,27,0.1);
+  border-bottom: 1px solid rgba(7, 17, 27, 0.1);
 }
 
 .goods .foods-wrapper {
@@ -100,7 +103,7 @@
   margin: 18px;
   padding-bottom: 18px;
   position: relative;
-  border-bottom:1px solid rgba(7,17,27,0.1);
+  border-bottom: 1px solid rgba(7, 17, 27, 0.1);
 }
 
 .goods .foods-wrapper .food-list .food-item:last-child {
@@ -284,7 +287,7 @@
 }
 
 .shopCart .content .content-left .logo-wrapper .logo.highlight {
-  background: #FE9F00;
+  background: #fe9f00;
 }
 
 .shopCart .content .content-left .logo-wrapper .logo .icon-gouwuche {
@@ -344,7 +347,7 @@
 }
 
 .shopCart .content .content-right .pay.enough {
-  background: #FF9D01;
+  background: #ff9d01;
   color: #fff;
 }
 
@@ -370,7 +373,7 @@
   left: 0;
   z-index: -1;
   width: 100%;
-  transform:translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
 }
 
 .shopCart .shopcart-list :fade-enter-active, :fade-leave-active {
@@ -398,7 +401,7 @@
 .shopCart .shopcart-list .list-header .empty {
   float: right;
   font-size: 12px;
-  color: #FD9A01;
+  color: #fd9a01;
 }
 
 .shopCart .shopcart-list .list-content {
@@ -406,14 +409,14 @@
   max-height: 217px;
   width: 690rpx;
   background: #fff;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .shopCart .shopcart-list .list-content .shopcart-food {
   position: relative;
   padding: 12px 0;
   box-sizing: border-box;
-  border-top: 1px solid rgba(7,17,27,0.1);
+  border-top: 1px solid rgba(7, 17, 27, 0.1);
 }
 
 .shopCart .shopcart-list .list-content .shopcart-food .name {
@@ -460,13 +463,13 @@
   background: rgba(7, 17, 27, 0);
 }
 
-.gouwuche-img{
+.gouwuche-img {
   margin-top: 5%;
   height: 90%;
   width: 90%;
 }
 
-.jian-img{
+.jian-img {
   width: 100%;
   height: 100%;
 }
@@ -529,6 +532,6 @@
   content: "\e670";
 }
 
-.sc{
+.sc {
   height: 100%;
 }

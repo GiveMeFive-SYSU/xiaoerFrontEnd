@@ -1,9 +1,10 @@
 /* pages/businessLogin/businessLogin.wxss */
-/* businessRegister.wxss */
-page{
+
+page {
   height: 100%;
   width: 100%;
 }
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -23,30 +24,33 @@ page{
   font-weight: bold;
 }
 
-.container{
+.container {
   height: 100%;
   width: 100%;
-  background: #EFEFEF;
+  background: #efefef;
 }
-.item-view{
+
+.item-view {
   position: relative;
   margin-bottom: 150rpx;
   display: flex;
   flex-direction: row;
 }
-.input-title{
-  width:30%;
+
+.input-title {
+  width: 30%;
   font-size: 15pt;
   font-weight: bold;
 }
 
-.input-view{
+.input-view {
   padding: 2px;
   background: white;
   border-radius: 8px;
   width: 100%;
 }
-.input-view-phone{
+
+.input-view-phone {
   padding: 2px;
   border-radius: 8px;
   width: 38%;
@@ -54,27 +58,26 @@ page{
   margin-right: 2%;
 }
 
-.bottom-button{
+.bottom-button {
   position: fixed;
   bottom: 0px;
   width: 100%;
 }
 
-.submit-button{
+.submit-button {
   width: 100%;
-  background: #FF9E01;
-  color:white;
+  background: #ff9e01;
+  color: white;
 }
 
-.weui-input{
+.weui-input {
   font-family: Microsoft YaHei;
 }
 
-.yanzhengma{
-  color: #FF9E01;
+.yanzhengma {
+  color: #ff9e01;
 }
 
-.warn{
+.warn {
   color: red;
 }
-

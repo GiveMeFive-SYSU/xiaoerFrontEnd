@@ -1,11 +1,13 @@
-.img{
-    width: 100%;
-    display: flex;
-    align-items: center;
+/* pages/tableDetail/tableDetail.wxss */
+
+.img {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.btn{
+.btn {
   margin: 10px;
-  background: #FF9E01;
+  background: #ff9e01;
   color: white;
 }

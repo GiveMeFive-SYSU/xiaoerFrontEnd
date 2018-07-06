@@ -1,10 +1,12 @@
-/* menuDetail.wxss */
-page{
+/* pages/menuDetail/menuDetail.wxss */
+
+page {
   height: 100%;
   width: 100%;
-  background: #EFEFEF;
+  background: #efefef;
 }
-.dish-item{
+
+.dish-item {
   height: 64px;
   font-size: 12px;
   background: white;
@@ -12,42 +14,45 @@ page{
   margin: 12px;
   padding-left: 2px;
 }
-.text{
+
+.text {
   width: 400rpx;
 }
-.buttonText{
-  color: #FF9E01;
+
+.buttonText {
+  color: #ff9e01;
   font-size: 18px;
 }
-.remove{
+
+.remove {
   position: absolute;
   right: 60px;
-  top:2px;
-  height : 25px;
-  width : 40px;
-  font-size: 12px;
-  margin-top: 30rpx;
-}
-.correct{
-  position: absolute;
-  right: 10px;
-  top:2px;
-  height : 25px;
-  width : 40px;
+  top: 2px;
+  height: 25px;
+  width: 40px;
   font-size: 12px;
   margin-top: 30rpx;
 }
 
-.add-button{
-  margin-top:10px;
-  margin-bottom:10px;
+.correct {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  height: 25px;
+  width: 40px;
+  font-size: 12px;
+  margin-top: 30rpx;
+}
+
+.add-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 90%;
   margin-left: 5%;
   color: white;
   font-size: 22px;
-  background: #FF9E01;
+  background: #ff9e01;
 }
-
 
 .content {
   position: absolute;
@@ -97,16 +102,15 @@ page{
   text-decoration: line-through;
 }
 
-.undo-or-submit-button{
-  margin-top:10px;
-  margin-bottom:10px;
+.undo-or-submit-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 90%;
   margin-left: 5%;
   color: white;
   font-size: 22px;
-  background: #FF9E01;
+  background: #ff9e01;
 }
-
 
 .icon {
   position: absolute;
@@ -117,7 +121,7 @@ page{
 }
 
 .tupian {
-  width:20%;
-  height:64px;
-  margin-left:40%;
+  width: 20%;
+  height: 64px;
+  margin-left: 40%;
 }

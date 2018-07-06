@@ -1,14 +1,15 @@
+// start.js
 var app = getApp();
 Page({
-  data:{
-    Username:null
+  data: {
+    Username: null
   },
-  onLoad: function () {
+  onLoad: function() {
     console.log(app.getOpenid());
-    
-   
+
+
   },
-  toBusi: function () {
+  toBusi: function() {
     var that = this;
     wx.request({
       url: app.globalData.prefixUrl + "/users/Checkexist?username=" + app.getOpenid(),
@@ -16,14 +17,16 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "GET",
-      complete: function (res) {
+      complete: function(res) {
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
         }
         console.log(res);
         if (res.data.err == 0) {
-          that.setData({ Username: app.getOpenid() });
+          that.setData({
+            Username: app.getOpenid()
+          });
           wx.navigateTo({
             url: '../businessLogin/businessLogin?username=' + that.data.Username + "&key=" + res.data.accessKey,
           })
@@ -34,9 +37,9 @@ Page({
         }
       }
     })
-    
+
   },
-  toCust: function () {
+  toCust: function() {
     var that = this;
     wx.scanCode({
       success: (res) => {

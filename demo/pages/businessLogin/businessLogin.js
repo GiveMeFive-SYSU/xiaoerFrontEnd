@@ -1,4 +1,4 @@
-// pages/businessLogin/businessLogin.js
+// businessLogin.js
 var app = getApp();
 Page({
 
@@ -7,24 +7,27 @@ Page({
    */
   data: {
     userInfo: {},
-    username:null,
-    key:null,
-    pwd:null,
-    toastHidden:true,
-    message:null,
+    username: null,
+    key: null,
+    pwd: null,
+    toastHidden: true,
+    message: null,
   },
-  temppwd:null,
+  temppwd: null,
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log('onLoad');
     console.log(options);
-    this.setData({username:options.username, key:options.key});
+    this.setData({
+      username: options.username,
+      key: options.key
+    });
     console.log(this.data);
     var that = this;
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
+    app.getUserInfo(function(userInfo) {
       //更新数据
       that.setData({
         userInfo: userInfo
@@ -35,51 +38,53 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
-  pwdinput:function(e) {
+  pwdinput: function(e) {
     this.temppwd = e.detail.value;
-    
+
   },
-  login:function() {
+  login: function() {
     if (this.temppwd.length != 0) {
-      this.setData({ pwd: this.temppwd });
+      this.setData({
+        pwd: this.temppwd
+      });
       var that = this;
       var utilMd5 = require('../../utils/md5.js');
       var password32 = utilMd5.hexMD5(this.data.pwd);
@@ -95,7 +100,7 @@ Page({
           password: password13
         },
 
-        complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             return;
@@ -109,16 +114,22 @@ Page({
             })
           } else {
             console.log('密码错误');
-            that.setData({ toastHidden: !that.data.toastHidden, message: "密码错误" });
+            that.setData({
+              toastHidden: !that.data.toastHidden,
+              message: "密码错误"
+            });
           }
         }
       })
     } else {
-      this.setData({ toastHidden: !this.data.toastHidden, message:"请输入密码"});
+      this.setData({
+        toastHidden: !this.data.toastHidden,
+        message: "请输入密码"
+      });
     }
 
   },
-  toastBindChange: function () {
+  toastBindChange: function() {
     this.setData({
       toastHidden: !this.data.toastHidden
     })
@@ -126,7 +137,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   }
 })

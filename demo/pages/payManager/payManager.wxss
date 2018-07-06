@@ -1,10 +1,12 @@
 /* pages/payManager/payManager.wxss */
-page{
+
+page {
   height: 100%;
   width: 100%;
-  background: #EEEEEE;
+  background: #eee;
 }
-.month{
+
+.month {
   background: white;
   position: absolute;
   top: 10%;
@@ -12,10 +14,11 @@ page{
   left: 15%;
   border-radius: 6px;
   padding: 5px;
-  color: #FF9E01;
+  color: #ff9e01;
 }
-.year{
-  color: #FF9E01;
+
+.year {
+  color: #ff9e01;
   padding: 5px;
   border-radius: 6px;
   background: white;
@@ -24,8 +27,9 @@ page{
   position: absolute;
   top: 33%;
 }
-.select{
-  color: #FF9E01;
+
+.select {
+  color: #ff9e01;
   padding: 5px;
   border-radius: 6px;
   background: white;
@@ -34,11 +38,13 @@ page{
   position: absolute;
   top: 56%;
 }
-.title{
-  border-bottom: 1px solid #EEEEEE;
+
+.title {
+  border-bottom: 1px solid #eee;
 }
-.query{
-  background: #FF9E01;
+
+.query {
+  background: #ff9e01;
   color: white;
   width: 60%;
 }

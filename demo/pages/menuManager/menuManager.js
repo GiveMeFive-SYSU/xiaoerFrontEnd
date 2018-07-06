@@ -21,7 +21,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     if (this.data.Goods.length == 0) {
       var that = this;
       wx.request({
@@ -30,7 +30,7 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
         method: "GET",
-        complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             that.setData({
@@ -39,14 +39,18 @@ Page({
             })
             return;
           }
-          that.setData({ Goods: res.data, username: options.username, FirstGoods: res.data });
-          
+          that.setData({
+            Goods: res.data,
+            username: options.username,
+            FirstGoods: res.data
+          });
+
         }
       })
-      
+
     }
   },
-  removeFunction: function (e) {
+  removeFunction: function(e) {
     this.data.isPressed = true;
     var removestr = 'D' + e.currentTarget.dataset.itemIndex;
     this.strlist.push(removestr);
@@ -62,9 +66,11 @@ Page({
         break;
       }
     }
-    this.setData({ Goods: this.data.Goods });
+    this.setData({
+      Goods: this.data.Goods
+    });
   },
-  toTopFunction: function (e) {
+  toTopFunction: function(e) {
     this.data.isPressed = true;
     if (e.currentTarget.dataset.itemIndex != 0) {
       var Topstr = 'C' + e.currentTarget.dataset.itemIndex;
@@ -74,10 +80,12 @@ Page({
         this.data.Goods[i] = this.data.Goods[i - 1];
       }
       this.data.Goods[0] = TotopArray;
-      this.setData({ Goods: this.data.Goods });
+      this.setData({
+        Goods: this.data.Goods
+      });
     }
   },
-  Undo: function (e) {
+  Undo: function(e) {
     if (this.strlist.length != 0) {
       if (this.strlist[this.strlist.length - 1][0] == 'C') {
         var changenum = parseInt(this.strlist[this.strlist.length - 1][1]);
@@ -105,12 +113,14 @@ Page({
           }
         }
       }
-      this.setData({ Goods: this.data.Goods });
+      this.setData({
+        Goods: this.data.Goods
+      });
       this.strlist.length -= 1;
     }
 
   },
-  Submit: function (e) {
+  Submit: function(e) {
     if (this.strlist.length != 0) {
 
       for (var i = 0; i < this.data.Goods.length; ++i) {
@@ -142,7 +152,7 @@ Page({
           deletelist: that.dellist,
           addlist: that.addlist
         },
-        complete: function (res) {
+        complete: function(res) {
           if (res == null || res.data == null) {
             console.error('网络请求失败');
             that.setData({
@@ -157,7 +167,7 @@ Page({
           that.Typelist = [];
           that.addlist = [];
           that.setData({
-            Goods:that.data.Goods,
+            Goods: that.data.Goods,
             toastHidden: !that.data.toastHidden,
             message: '更改成功'
           })
@@ -165,10 +175,10 @@ Page({
       })
     }
   },
-  dishtypeInput: function (e) {
+  dishtypeInput: function(e) {
     this.addinput = e.detail.value;
   },
-  addFunction: function (e) {
+  addFunction: function(e) {
     console.log(this.addinput);
     if (this.addinput == null) {
       wx.showToast({
@@ -183,11 +193,13 @@ Page({
     foodobj['no'] = len;
     this.addlist.push(this.addinput);
     this.data.Goods.splice(this.data.Goods.length, 0, foodobj);
-    this.setData({ Goods: this.data.Goods });
+    this.setData({
+      Goods: this.data.Goods
+    });
     var addstr = 'A' + len;
     this.strlist.push(addstr);
   },
-  selectMenu: function (e) {
+  selectMenu: function(e) {
     if (this.data.isPressed == false) console.log(e.currentTarget.dataset.itemIndex);
     this.data.isPressed = false;
     console.log("sdjhasdhajsdasjdasjdasdasdasd");
@@ -196,7 +208,7 @@ Page({
       url: '../menuDetail/menuDetail?no=' + this.data.Goods[e.currentTarget.dataset.itemIndex].no + '&typename=' + this.data.Goods[e.currentTarget.dataset.itemIndex].name + '&username=' + this.data.username
     })
   },
-  toastBindChange: function () {
+  toastBindChange: function() {
     this.setData({
       toastHidden: !this.data.toastHidden
     })
