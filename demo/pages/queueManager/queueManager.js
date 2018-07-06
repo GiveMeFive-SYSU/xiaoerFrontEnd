@@ -23,6 +23,7 @@ Page({
       method: 'GET',
       complete: function(res) {
         console.log("#####排队管理")
+        console.log(res)
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;

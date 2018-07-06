@@ -23,6 +23,7 @@ Page({
   tempdishdescription:null,
   formSubmit:function(e) {
     console.log(e);
+    console.log(this.data.image)
     var temp = false;
     if (e.detail.value.name == '') {
       this.setData({
@@ -53,7 +54,8 @@ Page({
         showTopTips: true
       })
     } else {
-      console.log(e);
+      console.log('########图片');
+      console.log(this.data.image)
       var that = this;
       if (e.detail.value.oldprice == '') {
         e.detail.value.oldprice = e.detail.value.price;
@@ -89,6 +91,9 @@ Page({
     wx.chooseImage({
       count:1,
       success: function (res) {
+        
+        console.log("@@@@@@@选择好图片")
+        console.log(res)
         var tempFilePaths = res.tempFilePaths[0];
         that.setData({ image: tempFilePaths});
       }
