@@ -9,11 +9,7 @@
         <text class="dish-info">￥{{dish.price}}</text>
       </view>
     </scroll-view>
-<<<<<<< HEAD
     <view class="table-num">备注: {{table.note}}</view>
-=======
-    <view class="note">备注: {{table.order.note}}</view>
->>>>>>> 6a4d49f1efee064ad5bbb85dc5f82c79d32c0f9c
     <button class="finish-btn" size="mini" type="primary" bindtap="finishOrder" data-ordernum="{{table.ordernum}}">完成</button>
   </view>
   <view hidden="{{tables.length != 0}}" class="all-finish">所有订单已经完成</view>

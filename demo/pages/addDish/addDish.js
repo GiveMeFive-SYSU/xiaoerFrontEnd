@@ -89,16 +89,11 @@ Page({
   clickToChoose: function() {
     var that = this;
     wx.chooseImage({
-<<<<<<< HEAD
       count:1,
       success: function (res) {
         
         console.log("@@@@@@@选择好图片")
         console.log(res)
-=======
-      count: 1,
-      success: function(res) {
->>>>>>> 6a4d49f1efee064ad5bbb85dc5f82c79d32c0f9c
         var tempFilePaths = res.tempFilePaths[0];
         that.setData({
           image: tempFilePaths
